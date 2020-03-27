@@ -1,0 +1,36 @@
+.recipePage{
+
+}
+
+.recipePicture{
+    display: block;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100vh;
+}
+
+.recipeContent{
+    display: block;
+    position: absolute;
+    background-color: rgb(90, 90, 90);
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100vh;
+}
+
+.recipeContentTitle{
+    position: absolute;
+    top: 25vh;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+
+    border: 1px solid red;
+}
