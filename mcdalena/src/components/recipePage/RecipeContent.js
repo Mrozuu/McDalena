@@ -9,11 +9,7 @@ class RecipeContent extends React.Component {
     this.state = {};
   
   }
-  recipeComponents = recipeData.map(recipe => {
-    return(
-      
-    )
-  })
+ 
 
 
   render() {

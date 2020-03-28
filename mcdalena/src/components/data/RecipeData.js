@@ -4,12 +4,12 @@ const recipeData = [
         title: "Rosół",
         difficulty: 1, 
         timeToPreper: 60,
-        ingredients = [
+        ingredients : [
             "woda", 
             "makaron",
             "udko z kurczaka" 
         ],
-        preperation = [
+        preperation : [
             "jeden",
             "dwa",
             "trzy"
@@ -21,12 +21,12 @@ const recipeData = [
         title: "Lorem ipsum",
         difficulty: 1, 
         timeToPreper: 60,
-        ingredients = [
+        ingredients : [
             "Lorem ipsum_i1", 
             "Lorem ipsum_i2",
             "Lorem ipsum_i3" 
         ],
-        preperation = [
+        preperation : [
             "Lorem ipsum_p1", 
             "Lorem ipsum_p2",
             "Lorem ipsum_p3" 
