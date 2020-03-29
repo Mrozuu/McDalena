@@ -16,6 +16,7 @@ class SetPage extends React.Component {
     return (
       <div className="setPage">
         <MainLogo />
+        <SetTopBar />
         <SetPicture />
         <SetContent />
         <LittleLogo />
