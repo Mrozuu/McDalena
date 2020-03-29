@@ -10,13 +10,12 @@ class SetContentRecipes extends React.Component {
 
   render() {
     return (
-        <div className="setContentRecipes">
-          <SetRecipe />
-          <SetRecipe />
-          <SetRecipe />
-          <SetRecipe />
-        </div>
-    )
+      <div className="setContentRecipes">
+        <SetRecipe />
+        <SetRecipe />
+        <SetRecipe />
+      </div>
+    );
   }
 }
 

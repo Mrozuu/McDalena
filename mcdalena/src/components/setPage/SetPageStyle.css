@@ -1,9 +1,13 @@
-.setPage{
-    
+@import url('https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC&display=swap');
+
+body {
+    font-family: 'IM Fell French Canon SC', serif;
 }
 
+.setPage {}
 
-.setTopBar{
+
+.setTopBar {
     position: absolute;
     top: 0;
     left: 0;
@@ -13,13 +17,13 @@
     opacity: 0.1;
     backdrop-filter: blur(10px);
     z-index: 1;
-    box-shadow: 0px 20px 10px -6px rgba(0,0,0,0.48);
+    box-shadow: 0px 20px 10px -6px rgba(0, 0, 0, 0.48);
 }
 
-.setPicture{
+.setPicture {
     display: block;
     position: absolute;
-    background: url(../../img/set1.jpg);
+    background: url(../../img/set2.jpg) no-repeat;
     background-size: 100% 100%;
     top: 0;
     left: 0;
@@ -27,98 +31,140 @@
     width: 50%;
 }
 
-.setArrowLeft{
+
+
+.setArrowLeft {
     position: absolute;
     margin-left: auto;
     margin-right: auto;
-    top:50%;
+    top: 50%;
     left: 0;
-    right: 0;  
+    right: 0;
     text-align: left;
     color: white;
-    font-size:40px;
+    font-size: 40px;
 }
 
-.setArrowRight{
+.setArrowRight {
     position: absolute;
     margin-left: auto;
     margin-right: auto;
-    top:50%;
+    top: 50%;
     left: 0;
-    right: 0;  
+    right: 0;
     text-align: right;
     color: white;
-    font-size:40px;
+    font-size: 40px;
 }
 
-.setContent{
+
+.setContent {
     display: block;
     position: absolute;
-    background-color: rgb(90, 90, 90);
+    background-image: linear-gradient(to right, rgb(180, 180, 180), rgb(255, 255, 219));
     top: 0;
     left: 50%;
     width: 50%;
     height: 100vh;
 }
 
-.setTitle{
+.setTitle {
     position: absolute;
     display: block;
     height: 15vh;
-    top:15vh;
+    top: 15vh;
     left: 0;
     right: 0;
     margin-left: auto;
     margin-left: auto;
     text-align: center;
-    
-    border: 1px solid red;
 }
 
-.setContentDescription{
+.setIcons img {
+    float: middle;
+    margin-left: 30px;
+    margin-right: 30px;
+    width: 30px;
+    height: 30px;
+}
+
+.setContentDescription {
     position: absolute;
-    top:30vh;
-    left:50%;
-    width:50%;
+    top: 27vh;
+    left: 50%;
+    width: 40%;
     height: 70vh;
-    border: 1px solid green;
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-top: 3vh;
+    text-align: justify;
+    overflow-y: hidden;
 }
 
-.setContentRecipes{
+.setContentDescription h2 {
+    text-align: center;
+}
+
+.setContentLines {
+    position: absolute;
+    display: block;
+    z-index: 3;
+    top: 35vh;
+    left: 50%;
+    height: 55vh;
+    border-right: 2px solid black;
+
+}
+
+.setContentRecipes {
     position: absolute;
     overflow: scroll;
     overflow-x: hidden;
-    top:30vh;
-    width:50%;
+    top: 30vh;
+    width: 50%;
     height: 70vh;
-
 }
 
 
-.setRecipe{
+.setRecipe {
     position: relative;
     flex-direction: column;
     width: 90%;
     height: 30%;
-    margin:auto;
+    margin: auto;
     margin-top: 2.5%;
 }
 
-.setRecipe:hover{
-    background-color: rgb(169, 25, 6);
+.setRecipeHover {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    z-index: 3;
+    text-align: center;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
-.setRecipePicture{
+.setRecipeHover h2 {
+    font-size: 40px;
+    color: wheat;
+}
+
+.setRecipePicture {
     position: absolute;
-    top:10%;
+    top: 10%;
     left: 5%;
     height: 80%;
     width: 45%;
     background: url("../../img/set1.jpg");
     background-size: 100% 100%;
-    
+
 }
-.setRecipeTitle{
+
+.setRecipeTitle {
     left: 60%;
     font-size: 20px;
     position: absolute;
@@ -132,9 +178,9 @@
 
 ::-webkit-scrollbar {
     width: 10px;
-  }
-  
-  /* Track /
+}
+
+/* Track /
   ::-webkit-scrollbar-track {
     background: #f1f1f1; 
   }
@@ -145,6 +191,6 @@
   }
   
   / Handle on hover */
-  .setContent > ::-webkit-scrollbar-thumb  {
-    background: rgb(202, 28, 28); 
-  }
+.setContent> ::-webkit-scrollbar-thumb {
+    background: rgb(202, 28, 28);
+}

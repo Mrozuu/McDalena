@@ -1,6 +1,6 @@
 import React from "react";
 import "./SetPageStyle.css";
-import SetTitle from "./SetTitle"
+import SetTitle from "./SetTitle";
 import SetContentRecipes from "./SetContentRecipes";
 import SetContentDescription from "./SetContentDescription";
 
@@ -13,9 +13,10 @@ class SetContent extends React.Component {
   render() {
     return (
       <div className="setContent">
-          <SetTitle />
-          <SetContentRecipes />
-          <SetContentDescription />
+        <SetTitle />
+        <SetContentRecipes />
+        <div className="setContentLines" />
+        <SetContentDescription />
       </div>
     );
   }

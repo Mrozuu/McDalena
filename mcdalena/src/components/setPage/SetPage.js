@@ -4,6 +4,7 @@ import MainLogo from "../mainPage/MainLogo";
 import SetTopBar from "./SetTopBar";
 import SetPicture from "./SetPicture";
 import SetContent from "./SetContent";
+import LittleLogo from "../mainPage/LittleLogo";
 
 class SetPage extends React.Component {
   constructor() {
@@ -14,10 +15,10 @@ class SetPage extends React.Component {
   render() {
     return (
       <div className="setPage">
-        <SetTopBar />
         <MainLogo />
         <SetPicture />
         <SetContent />
+        <LittleLogo />
       </div>
     );
   }
