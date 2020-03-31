@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC&display=swap');
 
+
 body {
     font-family: 'IM Fell French Canon SC', serif;
 }
@@ -72,7 +73,7 @@ body {
     position: absolute;
     display: block;
     height: 15vh;
-    top: 15vh;
+    top: 10vh;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -90,7 +91,7 @@ body {
 
 .setContentDescription {
     position: absolute;
-    top: 27vh;
+    top: 20vh;
     left: 50%;
     width: 40%;
     height: 70vh;
@@ -120,7 +121,7 @@ body {
     position: absolute;
     overflow: scroll;
     overflow-x: hidden;
-    top: 30vh;
+    top: 24vh;
     width: 50%;
     height: 70vh;
 }
@@ -193,4 +194,14 @@ body {
   / Handle on hover */
 .setContent> ::-webkit-scrollbar-thumb {
     background: rgb(202, 28, 28);
+}
+
+.littleLogo {
+    display: block;
+    position: absolute;
+    background-color: rgb(31, 27, 51);
+    top: 95vh;
+    width: 100%;
+    height: 5vh;
+    left: 0;
 }

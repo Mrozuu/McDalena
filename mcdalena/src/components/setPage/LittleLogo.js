@@ -1,5 +1,5 @@
 import React from "react";
-import "./MainPageStyle.css";
+import "./SetPageStyle.css";
 
 class LittleLogo extends React.Component {
   constructor() {

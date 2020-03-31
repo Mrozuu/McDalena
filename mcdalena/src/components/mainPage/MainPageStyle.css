@@ -78,8 +78,8 @@ body {
     z-index: 2;
     background-color: rgb(51, 27, 27);
     top: calc(100vh - 50px);
-    left: calc(50vw - 100px);
-    width: 200px;
+    left: 50vw;
+    width: 50vw;
     height: 50px;
 }
 

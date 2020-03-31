@@ -3,6 +3,7 @@ import "./SetPageStyle.css";
 import SetTitle from "./SetTitle";
 import SetContentRecipes from "./SetContentRecipes";
 import SetContentDescription from "./SetContentDescription";
+import LittleLogo from "./LittleLogo";
 
 class SetContent extends React.Component {
   constructor() {
@@ -17,6 +18,7 @@ class SetContent extends React.Component {
         <SetContentRecipes />
         <div className="setContentLines" />
         <SetContentDescription />
+        <LittleLogo />
       </div>
     );
   }
