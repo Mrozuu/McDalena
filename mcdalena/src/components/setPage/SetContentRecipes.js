@@ -1,7 +1,6 @@
 import React from "react";
 import "./SetPageStyle.css";
 import SetRecipe from "./SetRecipe";
-import Modal from "react-awesome-modal";
 
 class SetContentRecipes extends React.Component {
   constructor(props) {
@@ -11,21 +10,10 @@ class SetContentRecipes extends React.Component {
     };
   }
 
-  openModal() {
-    this.setState({
-      visible: true
-    });
-  }
-
-  closeModal() {
-    this.setState({
-      visible: false
-    });
-  }
-
   render() {
     return (
       <div className="setContentRecipes">
+        <SetRecipe />
         <SetRecipe />
         <SetRecipe />
         <SetRecipe />
