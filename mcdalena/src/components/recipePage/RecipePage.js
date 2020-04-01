@@ -13,9 +13,8 @@ class RecipePage extends React.Component {
   render() {
     return (
       <div className="recipePage">
-          <RecipePicture />
-          <RecipeContent />
-          <MainLogo />
+        <RecipePicture />
+        <RecipeContent />
       </div>
     );
   }

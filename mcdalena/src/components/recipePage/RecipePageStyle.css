@@ -1,39 +1,49 @@
-@import url('https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC&display=swap');
+@import url("https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC&display=swap");
 
 body {
-    font-family: 'IM Fell French Canon SC', serif;
+  font-family: "IM Fell French Canon SC", serif;
 }
 
-
-.recipePage {}
+.recipePage {
+  position: relative;
+  width: 70vw;
+  height: 80vh;
+  box-shadow: 20px 20px red;
+}
 
 .recipePicture {
-    display: block;
-    position: absolute;
-    background-color: rgb(255, 255, 255);
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100vh;
+  display: block;
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
 }
 
 .recipeContent {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 50%;
-    height: 100vh;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  background-color: red;
 }
 
 .recipeContentTitle {
-    position: absolute;
-    top: 25vh;
-    width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    text-align: center;
-    border: 1px solid red;
+  position: absolute;
+  top: 25vh;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  border: 1px solid red;
+}
+
+.modal {
+  width: 100vh;
+  height: 100vw;
 }
