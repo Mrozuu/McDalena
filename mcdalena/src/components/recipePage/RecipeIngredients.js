@@ -11,6 +11,14 @@ class RecipeIngredients extends React.Component {
     return (
       <div className="recipeIngredients">
         <RecipeTitle name={"Składniki"} />
+        <div className="recipeList">
+          <ul>
+            <li>Raz</li>
+            <li>Dwa</li>
+            <li>Raz</li>
+            <li>Dwa</li>
+          </ul>
+        </div>
       </div>
     );
   }

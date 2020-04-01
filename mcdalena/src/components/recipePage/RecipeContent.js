@@ -12,8 +12,8 @@ class RecipeContent extends React.Component {
   render() {
     return (
       <div className="recipeContent">
-        <div className="icon-cancel iconIconCancel" />
         <RecipeTitle name={"Sposób przygotowania"} />
+        <div className="recipeList"></div>
       </div>
     );
   }

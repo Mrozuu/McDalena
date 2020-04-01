@@ -4,22 +4,14 @@ import RecipeIngredients from "./RecipeIngredients";
 import RecipeContent from "./RecipeContent";
 import RecipeHeader from "./recipeHeader";
 
-class RecipePage extends React.Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
+export default ({ close }) => (
+  <div className="modal">
+      <a className="close icon-cancel iconIconCancel" onClick={close}>
 
-  render() {
-    return (
-      <div className="recipePage">
-        <RecipeHeader title="Nazwa dania" />
-        <RecipeIngredients />
-        <div className="recipeLine" />
-        <RecipeContent />
-      </div>
-    );
-  }
-}
-
-export default RecipePage;
+      </a>
+      <RecipeHeader title="Nazwa dania" />
+      <RecipeIngredients />
+      <div className="recipeLine" />
+      <RecipeContent />
+  </div>
+);

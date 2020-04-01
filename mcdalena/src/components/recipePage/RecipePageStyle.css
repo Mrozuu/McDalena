@@ -4,12 +4,17 @@ body {
   font-family: "IM Fell French Canon SC", serif;
 }
 
-.recipePage {
+.modal {
   position: relative;
   width: 70vw;
   height: 80vh;
   background-color: wheat;
   box-shadow: 0 10px 10px rgb(92, 92, 92);
+}
+
+.modal a{
+  z-index: 2;
+  cursor: pointer;
 }
 
 .recipeHeader {
@@ -29,6 +34,15 @@ body {
   height: 100%;
   width: 50%;
 }
+
+.recipeList{
+  position: absolute;
+  top:30%;
+  bottom: 5%;
+  left: 5%;
+  right: 5%;
+}
+
 
 .recipeContent {
   display: block;
@@ -66,3 +80,5 @@ body {
   right: 0;
   font-size: 40px;
 }
+
+
