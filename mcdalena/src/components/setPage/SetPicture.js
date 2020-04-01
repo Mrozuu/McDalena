@@ -11,8 +11,8 @@ class SetPicture extends React.Component {
   render() {
     return (
       <div className="setPicture">
-        <div className="icon-left-open setArrowLeft"></div>
-        <div className="icon-right-open setArrowRight"></div>
+        <div className="icon-left-open-big setArrowLeft"></div>
+        <div className="icon-right-open-big setArrowRight"></div>
       </div>
     );
   }

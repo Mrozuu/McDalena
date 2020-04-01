@@ -1,8 +1,8 @@
 import React from "react";
 import "./RecipePageStyle.css";
-import RecipePicture from "./RecipePicture";
+import RecipeIngredients from "./RecipeIngredients";
 import RecipeContent from "./RecipeContent";
-import MainLogo from "../mainPage/MainLogo";
+import RecipeHeader from "./recipeHeader";
 
 class RecipePage extends React.Component {
   constructor() {
@@ -13,7 +13,9 @@ class RecipePage extends React.Component {
   render() {
     return (
       <div className="recipePage">
-        <RecipePicture />
+        <RecipeHeader title="Nazwa dania" />
+        <RecipeIngredients />
+        <div className="recipeLine" />
         <RecipeContent />
       </div>
     );

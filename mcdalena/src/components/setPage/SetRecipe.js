@@ -21,7 +21,7 @@ class SetRecipe extends React.Component {
     return (
       <Popup
         contentStyle={contentStyle}
-        overlayStyle={{ background: "rgba(255,255,255,0.4" }}
+        overlayStyle={{ background: "rgba(255,255,255,0.1" }}
         modal
         trigger={
           <button style={{ cursor: "pointer" }} className="setRecipe">

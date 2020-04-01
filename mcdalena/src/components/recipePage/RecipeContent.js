@@ -1,23 +1,21 @@
 import React from "react";
 import "./RecipePageStyle.css";
-import RecipeContentTitle from "./RecipeContentTitle";
-import "../data/RecipeData"
+import RecipeTitle from "./RecipeTitle";
+import "../data/RecipeData";
 
 class RecipeContent extends React.Component {
   constructor() {
     super();
     this.state = {};
-  
   }
- 
-
 
   render() {
-    return <div className="recipeContent">
-      <RecipeContentTitle />
-
-  
-    </div>;
+    return (
+      <div className="recipeContent">
+        <div className="icon-cancel iconIconCancel" />
+        <RecipeTitle name={"Sposób przygotowania"} />
+      </div>
+    );
   }
 }
 
