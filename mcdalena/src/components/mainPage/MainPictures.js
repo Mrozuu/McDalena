@@ -8,7 +8,9 @@ class MainPictures extends React.Component {
   }
 
   render() {
-    return <div className="mainPictures"></div>;
+    return (
+      <div className="mainPictures" style={{ backgroundColor: "red" }}></div>
+    );
   }
 }
 

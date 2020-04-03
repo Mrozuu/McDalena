@@ -1,17 +1,20 @@
 import React from "react";
 import "./MainPageStyle.css";
+import { NavLink } from "react-router-dom";
 
 class MainContentButton extends React.Component {
-  constructor() {
+  constructor(props) {
     super();
     this.state = {};
   }
 
   render() {
     return (
-      <div className="mainContentButton">
-        <h2>POKAŻ OPIS</h2>
-      </div>
+      <NavLink to={this.props.buttonPath}>
+        <div className="mainContentButton">
+          <h2>POKAŻ OPIS</h2>
+        </div>
+      </NavLink>
     );
   }
 }

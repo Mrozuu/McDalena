@@ -1,8 +1,31 @@
 import React from "react";
 import "./SetPageStyle.css";
 import MainLogo from "../mainPage/MainLogo";
-import SetPicture from "./SetPicture";
-import SetContent from "./SetContent";
+import SetContentRoute from "./SetContentRoute";
+import { Route } from "react-router-dom";
+
+const routes = [
+  {
+    path: "/Set1",
+    name: "set1",
+    Component: SetContentRoute
+  },
+  {
+    path: "/Set2",
+    name: "set2",
+    Component: SetContentRoute
+  },
+  {
+    path: "/Set3",
+    name: "set3",
+    Component: SetContentRoute
+  },
+  {
+    path: "/Set4",
+    name: "set4",
+    Component: SetContentRoute
+  }
+];
 
 class SetPage extends React.Component {
   constructor() {
@@ -14,8 +37,11 @@ class SetPage extends React.Component {
     return (
       <div className="setPage">
         <MainLogo />
-        <SetPicture />
-        <SetContent />
+        {routes.map(({ path, Component }) => (
+          <Route key={path} exact path={path}>
+            <Component />
+          </Route>
+        ))}
       </div>
     );
   }
