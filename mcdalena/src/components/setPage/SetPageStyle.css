@@ -221,20 +221,3 @@ body {
 .popup-wrapper > * {
   width: 50%;
 }
-
-
-.iconIconCancel {
-  position: absolute;
-  top: 1%;
-  right: 0;
-  font-size: 40px;
-}
-
-.iconReturn {
-  position: absolute;
-  top: 1%;
-  right: 0%;
-  font-size: 50px;
-  z-index: 2;
-  color: black;
-}

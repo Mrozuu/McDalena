@@ -5,54 +5,35 @@ import MainLogo from "./MainLogo";
 import MainScrollBar from "./MainScrollBar";
 import { Route } from "react-router-dom";
 
-import SetPage from "../setPage/SetPage"
-
-
 const routes = [
   {
     path: "/MainSet1",
     name: "set1",
     Component: MainSet,
     color: "red",
-    buttonPath: "/SetPage1"
+    buttonPath: "/setPage1"
   },
   {
     path: "/MainSet2",
     name: "set2",
     Component: MainSet,
     color: "blue",
-    buttonPath: "/SetPage2"
+    buttonPath: "/setPage2"
   },
   {
     path: "/MainSet3",
     name: "set3",
     Component: MainSet,
     color: "purple",
-    buttonPath: "/SetPage3"
+    buttonPath: "/setPage3"
   },
   {
     path: "/MainSet4",
     name: "set4",
     Component: MainSet,
     color: "pink",
-    buttonPath: "/SetPage4"
-  },
-  {
-    path: "/SetPage1",
-    Component: SetPage
-  },
-  {
-    path: "/SetPage2",
-    Component: SetPage
-  },
-  {
-    path: "/SetPage3",
-    Component: SetPage
-  },
-  {
-    path: "/SetPage4",
-    Component: SetPage
-  },
+    buttonPath: "/setPage4"
+  }
 ];
 class MainPage extends React.Component {
   constructor() {
@@ -63,7 +44,8 @@ class MainPage extends React.Component {
   render() {
     return (
       <div className="mainPage">
-
+        <MainLogo />
+        <MainScrollBar />
         {routes.map(({ path, Component, color, buttonPath }) => (
           <Route key={path} exact path={path}>
             <Component color={color} buttonPath={buttonPath} />
