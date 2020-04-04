@@ -12,7 +12,7 @@ class MainContent extends React.Component {
     return (
       <div
         className="mainContent"
-        style={{ backgroundColor: this.props.color }}
+        style={{ backgroundColor: this.props.backgroundColor }}
       >
         <MainContentButton buttonPath={this.props.buttonPath} />
       </div>

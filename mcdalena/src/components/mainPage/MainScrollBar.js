@@ -24,6 +24,9 @@ class MainScrollBar extends React.Component {
         <NavLink to="/MainSet4">
           <MainScrollDot id="4" />
         </NavLink>
+        <NavLink to="/MainSet5">
+          <MainScrollDot id="5" />
+        </NavLink>
       </div>
     );
   }

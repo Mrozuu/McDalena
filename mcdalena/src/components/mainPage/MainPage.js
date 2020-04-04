@@ -1,59 +1,73 @@
 import React from "react";
 import "./MainPageStyle.css";
 import MainSet from "./MainSet";
-import MainLogo from "./MainLogo";
-import MainScrollBar from "./MainScrollBar";
 import { Route } from "react-router-dom";
 
-import SetPage from "../setPage/SetPage"
+import Photo3 from "../../img/set3.jpg";
+import Photo4 from "../../img/set4.jpg";
+import Photo5 from "../../img/set5.jpg";
 
+import SetPage from "../setPage/SetPage";
 
 const routes = [
   {
     path: "/MainSet1",
     name: "set1",
     Component: MainSet,
-    color: "red",
-    buttonPath: "/SetPage1"
+    backgroundColor: "#9CBAAC",
+    buttonPath: "/SetPage1",
+    backgroundImage: Photo5,
   },
   {
     path: "/MainSet2",
     name: "set2",
     Component: MainSet,
-    color: "blue",
-    buttonPath: "/SetPage2"
+    backgroundColor: "#EFEFE1",
+    buttonPath: "/SetPage2",
+    backgroundImage: Photo4,
   },
   {
     path: "/MainSet3",
     name: "set3",
     Component: MainSet,
-    color: "purple",
-    buttonPath: "/SetPage3"
+    backgroundColor: "#F7E0CF",
+    buttonPath: "/SetPage3",
+    backgroundImage: Photo3,
   },
   {
     path: "/MainSet4",
     name: "set4",
     Component: MainSet,
-    color: "pink",
-    buttonPath: "/SetPage4"
+    backgroundColor: "#E2AFA3",
+    buttonPath: "/SetPage4",
+    backgroundImage: Photo4,
+  },
+  {
+    path: "/MainSet5",
+    name: "set5",
+    Component: MainSet,
+    backgroundColor: "#5C8C9F",
+    buttonPath: "/SetPage4",
+    backgroundImage: Photo5,
   },
   {
     path: "/SetPage1",
-    Component: SetPage
+    Component: SetPage,
   },
   {
     path: "/SetPage2",
-    Component: SetPage
+    Component: SetPage,
   },
   {
     path: "/SetPage3",
-    Component: SetPage
+    Component: SetPage,
   },
   {
     path: "/SetPage4",
-    Component: SetPage
+    Component: SetPage,
   },
 ];
+
 class MainPage extends React.Component {
   constructor() {
     super();
@@ -63,12 +77,23 @@ class MainPage extends React.Component {
   render() {
     return (
       <div className="mainPage">
-
-        {routes.map(({ path, Component, color, buttonPath }) => (
-          <Route key={path} exact path={path}>
-            <Component color={color} buttonPath={buttonPath} />
-          </Route>
-        ))}
+        {routes.map(
+          ({
+            path,
+            Component,
+            backgroundColor,
+            backgroundImage,
+            buttonPath,
+          }) => (
+            <Route key={path} exact path={path}>
+              <Component
+                backgroundColor={backgroundColor}
+                backgroundImage={backgroundImage}
+                buttonPath={buttonPath}
+              />
+            </Route>
+          )
+        )}
       </div>
     );
   }

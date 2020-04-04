@@ -15,9 +15,9 @@ class MainSet extends React.Component {
       <div>
         <MainLogo />
         <MainScrollBar />
-        <MainPictures />
+        <MainPictures backgroundImage={this.props.backgroundImage} />
         <MainContent
-          color={this.props.color}
+          backgroundColor={this.props.backgroundColor}
           buttonPath={this.props.buttonPath}
         />
       </div>

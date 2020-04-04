@@ -20,12 +20,12 @@ body {
 .setPicture {
   display: block;
   position: absolute;
-  background: url(../../img/set2.jpg) no-repeat;
+  background: url(../../img/set4.jpg) no-repeat;
   background-size: 100% 100%;
   top: 0;
   left: 0;
   height: 100vh;
-  width: 50%;
+  width: 50vw;
 }
 
 .setArrowLeft {
@@ -55,11 +55,9 @@ body {
 .setContent {
   display: block;
   position: absolute;
-  background-image: linear-gradient(
-    to right,
-    rgb(180, 180, 180),
-    rgb(255, 255, 219)
-  );
+  background-image: linear-gradient(to right,
+      rgb(180, 180, 180),
+      rgb(255, 255, 219));
   top: 0;
   left: 50%;
   width: 50%;
@@ -78,9 +76,9 @@ body {
   text-align: center;
 }
 
-.setTitle h1{
+.setTitle h1 {
 
-    font-size:5vh;
+  font-size: 5vh;
 }
 
 .setIcons img {
@@ -201,7 +199,7 @@ body {
   }
   
   / Handle on hover */
-.setContent > ::-webkit-scrollbar-thumb {
+.setContent> ::-webkit-scrollbar-thumb {
   background: rgb(202, 28, 28);
 }
 
@@ -218,7 +216,8 @@ body {
 .popup-wrapper {
   width: 100%;
 }
-.popup-wrapper > * {
+
+.popup-wrapper>* {
   width: 50%;
 }
 
