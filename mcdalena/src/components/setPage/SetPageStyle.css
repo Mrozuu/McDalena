@@ -4,6 +4,10 @@ body {
   font-family: "IM Fell French Canon SC", serif;
 }
 
+.setPage {
+  z-index: 100;
+}
+
 .setTopBar {
   position: absolute;
   top: 0;
@@ -26,6 +30,7 @@ body {
   left: 0;
   height: 100vh;
   width: 50vw;
+  z-index: 2;
 }
 
 .setArrowLeft {
@@ -38,6 +43,7 @@ body {
   text-align: left;
   color: white;
   font-size: 40px;
+  z-index: 3;
 }
 
 .setArrowRight {
@@ -50,18 +56,22 @@ body {
   text-align: right;
   color: white;
   font-size: 40px;
+  z-index: 3;
 }
 
 .setContent {
   display: block;
   position: absolute;
-  background-image: linear-gradient(to right,
-      rgb(180, 180, 180),
-      rgb(255, 255, 219));
+  background-image: linear-gradient(
+    to right,
+    rgb(180, 180, 180),
+    rgb(255, 255, 219)
+  );
   top: 0;
   left: 50%;
   width: 50%;
   height: 100vh;
+  z-index: 2;
 }
 
 .setTitle {
@@ -77,7 +87,6 @@ body {
 }
 
 .setTitle h1 {
-
   font-size: 5vh;
 }
 
@@ -199,7 +208,7 @@ body {
   }
   
   / Handle on hover */
-.setContent> ::-webkit-scrollbar-thumb {
+.setContent > ::-webkit-scrollbar-thumb {
   background: rgb(202, 28, 28);
 }
 
@@ -217,10 +226,9 @@ body {
   width: 100%;
 }
 
-.popup-wrapper>* {
+.popup-wrapper > * {
   width: 50%;
 }
-
 
 .iconIconCancel {
   position: absolute;
@@ -234,6 +242,6 @@ body {
   top: 1%;
   right: 0%;
   font-size: 50px;
-  z-index: 2;
+  z-index: 3;
   color: black;
 }

@@ -13,8 +13,6 @@ class MainSet extends React.Component {
   render() {
     return (
       <div>
-        <MainLogo />
-        <MainScrollBar />
         <MainPictures backgroundImage={this.props.backgroundImage} />
         <MainContent
           backgroundColor={this.props.backgroundColor}

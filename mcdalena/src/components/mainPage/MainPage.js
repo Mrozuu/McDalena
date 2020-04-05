@@ -1,13 +1,16 @@
 import React from "react";
 import "./MainPageStyle.css";
+import { Route, Switch, useLocation } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
+
 import MainSet from "./MainSet";
-import { Route } from "react-router-dom";
+import SetPage from "../setPage/SetPage";
+import MainLogo from "./MainLogo";
+import MainScrollBar from "./MainScrollBar";
 
 import Photo3 from "../../img/set3.jpg";
 import Photo4 from "../../img/set4.jpg";
 import Photo5 from "../../img/set5.jpg";
-
-import SetPage from "../setPage/SetPage";
 
 const routes = [
   {
@@ -68,35 +71,29 @@ const routes = [
   },
 ];
 
-class MainPage extends React.Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <div className="mainPage">
-        {routes.map(
-          ({
-            path,
-            Component,
-            backgroundColor,
-            backgroundImage,
-            buttonPath,
-          }) => (
-            <Route key={path} exact path={path}>
-              <Component
-                backgroundColor={backgroundColor}
-                backgroundImage={backgroundImage}
-                buttonPath={buttonPath}
-              />
-            </Route>
-          )
-        )}
-      </div>
-    );
-  }
+function MainPage() {
+  const location = useLocation();
+  return (
+    <div className="mainPage">
+      <MainLogo />
+      <MainScrollBar />
+      {routes.map(
+        ({ path, Component, backgroundColor, backgroundImage, buttonPath }) => (
+          <AnimatePresence>
+            <Switch location={location} key={location.pathname}>
+              <Route key={path} exact path={path}>
+                <Component
+                  backgroundColor={backgroundColor}
+                  backgroundImage={backgroundImage}
+                  buttonPath={buttonPath}
+                />
+              </Route>
+            </Switch>
+          </AnimatePresence>
+        )
+      )}
+    </div>
+  );
 }
 
 export default MainPage;

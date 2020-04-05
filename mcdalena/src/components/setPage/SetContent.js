@@ -4,15 +4,38 @@ import SetTitle from "./SetTitle";
 import SetContentRecipes from "./SetContentRecipes";
 import SetContentDescription from "./SetContentDescription";
 import LittleLogo from "./LittleLogo";
+import { AnimatePresence, motion } from "framer-motion";
 
-class SetContent extends React.Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
+function SetContent() {
+  const pageTransition = {
+    duration: 1,
+    stiffness: 0,
+  };
 
-  render() {
-    return (
+  const pageVariants = {
+    initial: {
+      opacity: 1,
+      y: "-100vh",
+    },
+    in: {
+      opacity: 1,
+      y: 0,
+    },
+    out: {
+      opacity: 1,
+      y: "100vh",
+    },
+  };
+
+  return (
+    <motion.div
+      style={{ zIndex: 1000 }}
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={pageVariants}
+      transition={pageTransition}
+    >
       <div className="setContent">
         <SetTitle />
         <SetContentRecipes />
@@ -20,8 +43,8 @@ class SetContent extends React.Component {
         <SetContentDescription />
         <LittleLogo />
       </div>
-    );
-  }
+    </motion.div>
+  );
 }
 
 export default SetContent;

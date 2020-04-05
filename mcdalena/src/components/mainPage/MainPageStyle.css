@@ -2,6 +2,7 @@
 
 body {
   font-family: "IM Fell French Canon SC", serif;
+  overflow-y: hidden;
 }
 
 .mainPage {
@@ -23,7 +24,7 @@ body {
   left: 0;
   width: 50%;
   height: 100vh;
-  background: url('../../img/set1.jpg') no-repeat;
+  background: url("../../img/set1.jpg") no-repeat;
   background-size: 100% 100%;
   /** moved this property down */
 }
@@ -62,7 +63,7 @@ body {
 .mainLogo {
   display: block;
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   background-color: rgba(0, 0, 0, 1);
   top: 0;
   left: calc(50vw - 200px);
@@ -120,23 +121,4 @@ body {
   -ms-transform: scale(1.2);
   transform: scale(1.2);
   box-shadow: 0 0 20px gainsboro;
-}
-
-.page-enter {
-  opacity: 0;
-}
-
-.page-enter-active {
-  opacity: 1;
-  transition: opacity 400ms;
-  transition-delay: 600ms;
-}
-
-.page-exit {
-  opacity: 1;
-}
-
-.page-exit-active {
-  opacity: 0;
-  transition: opacity 400ms;
 }

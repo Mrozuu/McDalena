@@ -1,23 +1,18 @@
 import React from "react";
+import { AnimatePresence, motion } from "framer-motion";
+
 import "./MainPageStyle.css";
 import MainContentButton from "./MainContentButton";
 
-class MainContent extends React.Component {
-  constructor(props) {
-    super();
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <div
-        className="mainContent"
-        style={{ backgroundColor: this.props.backgroundColor }}
-      >
-        <MainContentButton buttonPath={this.props.buttonPath} />
-      </div>
-    );
-  }
+function MainContent(props) {
+  return (
+    <div
+      className="mainContent"
+      style={{ backgroundColor: props.backgroundColor }}
+    >
+      <MainContentButton buttonPath={props.buttonPath} />
+    </div>
+  );
 }
 
 export default MainContent;

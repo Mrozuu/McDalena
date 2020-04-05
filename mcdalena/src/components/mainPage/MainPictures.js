@@ -1,32 +1,45 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import "./MainPageStyle.css";
-import { gsap } from "gsap";
-
+import { AnimatePresence, motion } from "framer-motion";
 function MainPictures(props) {
-  let line = useRef(null);
+  const pageTransition = {
+    duration: 1,
+    stiffness: 0,
+  };
 
-  useEffect(() => {
-    gsap.from(line, 0.8, {
-      delay: 0.8,
-      ease: "power3.out",
+  const pageVariants = {
+    initial: {
+      opacity: 1,
       y: "100vh",
-      stagger: {
-        amount: 0.15,
-      },
-    });
-  }, [line]);
+    },
+    in: {
+      opacity: 1,
+      y: 0,
+    },
+    out: {
+      opacity: 1,
+      y: "-100vh",
+    },
+  };
 
   return (
-    <div
-      ref={(el) => (line = el)}
-      className="mainPictures"
-      style={{
-        backgroundImage: `url(${props.backgroundImage})`,
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-      }}
-    ></div>
+    <motion.div
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={pageVariants}
+      transition={pageTransition}
+    >
+      <div
+        className="mainPictures"
+        style={{
+          backgroundImage: `url(${props.backgroundImage})`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
+      ></div>
+    </motion.div>
   );
 }
 
