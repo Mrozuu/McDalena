@@ -5,13 +5,40 @@ import "./MainPageStyle.css";
 import MainContentButton from "./MainContentButton";
 
 function MainContent(props) {
+  const pageTransition = {
+    duration: 1,
+    stiffness: 0,
+  };
+
+  const pageVariants = {
+    initial: {
+      opacity: 1,
+      y: "-100vh",
+    },
+    in: {
+      opacity: 1,
+      y: 0,
+    },
+    out: {
+      opacity: 1,
+      y: "100vh",
+    },
+  };
   return (
-    <div
-      className="mainContent"
-      style={{ backgroundColor: props.backgroundColor }}
+    <motion.div
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={pageVariants}
+      transition={pageTransition}
     >
-      <MainContentButton buttonPath={props.buttonPath} />
-    </div>
+      <div
+        className="mainContent"
+        style={{ backgroundColor: props.backgroundColor }}
+      >
+        <MainContentButton buttonPath={props.buttonPath} />
+      </div>
+    </motion.div>
   );
 }
 

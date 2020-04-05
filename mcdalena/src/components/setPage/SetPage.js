@@ -1,7 +1,5 @@
 import React from "react";
 import "./SetPageStyle.css";
-import MainLogo from "../mainPage/MainLogo";
-import SetReturn from "./SetReturn";
 import SetContentRoute from "./SetContentRoute";
 import { Route } from "react-router-dom";
 
@@ -31,8 +29,6 @@ const routes = [
 function SetPage() {
   return (
     <div className="setPage">
-      <MainLogo />
-      <SetReturn />
       {routes.map(({ path, Component }) => (
         <Route key={path} exact path={path}>
           <Component />

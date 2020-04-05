@@ -62,11 +62,9 @@ body {
 .setContent {
   display: block;
   position: absolute;
-  background-image: linear-gradient(
-    to right,
-    rgb(180, 180, 180),
-    rgb(255, 255, 219)
-  );
+  background-image: linear-gradient(to right,
+      rgb(180, 180, 180),
+      rgb(255, 255, 219));
   top: 0;
   left: 50%;
   width: 50%;
@@ -208,7 +206,7 @@ body {
   }
   
   / Handle on hover */
-.setContent > ::-webkit-scrollbar-thumb {
+.setContent> ::-webkit-scrollbar-thumb {
   background: rgb(202, 28, 28);
 }
 
@@ -226,7 +224,7 @@ body {
   width: 100%;
 }
 
-.popup-wrapper > * {
+.popup-wrapper>* {
   width: 50%;
 }
 

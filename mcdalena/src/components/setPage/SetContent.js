@@ -5,7 +5,7 @@ import SetContentRecipes from "./SetContentRecipes";
 import SetContentDescription from "./SetContentDescription";
 import LittleLogo from "./LittleLogo";
 import { AnimatePresence, motion } from "framer-motion";
-
+import SetReturn from "./SetReturn";
 function SetContent() {
   const pageTransition = {
     duration: 1,
@@ -26,10 +26,8 @@ function SetContent() {
       y: "100vh",
     },
   };
-
   return (
     <motion.div
-      style={{ zIndex: 1000 }}
       initial="initial"
       animate="in"
       exit="out"
@@ -37,6 +35,7 @@ function SetContent() {
       transition={pageTransition}
     >
       <div className="setContent">
+        <SetReturn />
         <SetTitle />
         <SetContentRecipes />
         <div className="setContentLines" />

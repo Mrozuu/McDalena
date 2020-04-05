@@ -23,10 +23,8 @@ function SetPicture() {
       y: "-100vh",
     },
   };
-
   return (
     <motion.div
-      style={{ zIndex: 1000 }}
       initial="initial"
       animate="in"
       exit="out"
