@@ -73,6 +73,7 @@ const routes = [
 
 function MainPage() {
   const location = useLocation();
+
   return (
     <div className="mainPage">
       <MainLogo />

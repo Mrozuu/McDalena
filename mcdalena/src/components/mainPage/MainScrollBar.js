@@ -7,13 +7,17 @@ class MainScrollBar extends React.Component {
   constructor() {
     super();
     this.state = {
-      isButtonClicked: false,
+      isButtonClicked: true,
     };
 
     this.ClickEvent = () => {
       this.setState({ isButtonClicked: true });
       setTimeout(() => this.setState({ isButtonClicked: false }), 1000);
     };
+  }
+
+  componentDidMount() {
+    this.setState({ isButtonClicked: false });
   }
 
   render() {
