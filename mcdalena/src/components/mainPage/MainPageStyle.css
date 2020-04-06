@@ -3,6 +3,7 @@
 body {
   font-family: "IM Fell French Canon SC", serif;
   overflow-y: hidden;
+  background-color: black;
 }
 
 .mainPage {
@@ -121,4 +122,8 @@ body {
   -ms-transform: scale(1.2);
   transform: scale(1.2);
   box-shadow: 0 0 20px gainsboro;
+}
+
+.mainScrollBarClicked {
+  pointer-events: none;
 }

@@ -1,20 +1,29 @@
 import React from "react";
 import "./MainPageStyle.css";
 import MainScrollDot from "./MainScrollDot";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 class MainScrollBar extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      isButtonClicked: false,
+    };
+
+    this.ClickEvent = () => {
+      this.setState({ isButtonClicked: true });
+      setTimeout(() => this.setState({ isButtonClicked: false }), 1000);
+    };
   }
 
   render() {
+    let className = "mainScrollBar";
+    if (this.state.isButtonClicked) className += " mainScrollBarClicked";
     return (
-      <div className="mainScrollBar">
-        <NavLink to="/MainSet1">
+      <div onClick={this.ClickEvent} className={className}>
+        <Link to="/MainSet1">
           <MainScrollDot id="1" />
-        </NavLink>
+        </Link>
         <NavLink to="/MainSet2">
           <MainScrollDot id="2" />
         </NavLink>

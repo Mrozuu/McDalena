@@ -77,10 +77,16 @@ function MainPage() {
     <div className="mainPage">
       <MainLogo />
       <MainScrollBar />
-      {routes.map(
-        ({ path, Component, backgroundColor, backgroundImage, buttonPath }) => (
-          <AnimatePresence>
-            <Switch location={location} key={location.pathname}>
+      <AnimatePresence>
+        <Switch location={location} key={location.pathname}>
+          {routes.map(
+            ({
+              path,
+              Component,
+              backgroundColor,
+              backgroundImage,
+              buttonPath,
+            }) => (
               <Route key={path} exact path={path}>
                 <Component
                   backgroundColor={backgroundColor}
@@ -88,10 +94,10 @@ function MainPage() {
                   buttonPath={buttonPath}
                 />
               </Route>
-            </Switch>
-          </AnimatePresence>
-        )
-      )}
+            )
+          )}
+        </Switch>
+      </AnimatePresence>
     </div>
   );
 }

@@ -1,7 +1,8 @@
 import React from "react";
 import "./SetPageStyle.css";
 import SetContentRoute from "./SetContentRoute";
-import { Route } from "react-router-dom";
+import { Route, Switch, useLocation } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
 
 const routes = [
   {
@@ -27,13 +28,16 @@ const routes = [
 ];
 
 function SetPage() {
+  const location = useLocation();
   return (
     <div className="setPage">
-      {routes.map(({ path, Component }) => (
-        <Route key={path} exact path={path}>
-          <Component />
-        </Route>
-      ))}
+      <Switch>
+        {routes.map(({ path, Component }) => (
+          <Route key={path} exact path={path}>
+            <Component />
+          </Route>
+        ))}
+      </Switch>
     </div>
   );
 }
