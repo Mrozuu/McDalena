@@ -1,8 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC&display=swap");
 
 body {
-  font-family: "IM Fell French Canon SC",
-serif;
+  font-family: "IM Fell French Canon SC", serif;
 }
 
 .setPage {
@@ -25,7 +24,6 @@ serif;
 .setPicture {
   display: block;
   position: absolute;
-  background: url(../../img/set4.jpg) no-repeat;
   background-size: 100% 100%;
   top: 0;
   left: 0;
@@ -63,9 +61,11 @@ serif;
 .setContent {
   display: block;
   position: absolute;
-  background-image: linear-gradient(to right,
-      rgb(180, 180, 180),
-      rgb(255, 255, 219));
+  background-image: linear-gradient(
+    to right,
+    rgb(180, 180, 180),
+    rgb(255, 255, 219)
+  );
   top: 0;
   left: 50%;
   width: 50%;
@@ -207,7 +207,7 @@ serif;
   }
   
   / Handle on hover */
-.setContent> ::-webkit-scrollbar-thumb {
+.setContent > ::-webkit-scrollbar-thumb {
   background: rgb(202, 28, 28);
 }
 
@@ -225,7 +225,7 @@ serif;
   width: 100%;
 }
 
-.popup-wrapper>* {
+.popup-wrapper > * {
   width: 50%;
 }
 
@@ -243,4 +243,20 @@ serif;
   font-size: 50px;
   z-index: 3;
   color: black;
+}
+
+.aws-btn {
+  --slider-height-percentage: 100%;
+  --slider-transition-duration: 300ms;
+  --organic-arrow-thickness: 4px;
+  --organic-arrow-border-radius: 0px;
+  --organic-arrow-height: 40px;
+  --organic-arrow-color: #538bd5;
+  --control-button-width: 10%;
+  --control-button-height: 25%;
+  --control-button-background: transparent;
+  --control-bullet-color: #62a4fa;
+  --control-bullet-active-color: #538bd5;
+  --loader-bar-color: #851515;
+  --loader-bar-height: 6px;
 }

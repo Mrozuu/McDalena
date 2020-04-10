@@ -2,11 +2,19 @@ import React from "react";
 import "./SetPageStyle.css";
 import "../../fontello/css/fontello.css";
 import { AnimatePresence, motion } from "framer-motion";
+import AwesomeSlider from "react-awesome-slider";
+import "react-awesome-slider/dist/styles.css";
+
+import picture1 from "../../img/set1.jpg";
+import picture2 from "../../img/set2.jpg";
+import picture3 from "../../img/set3.jpg";
+import picture4 from "../../img/set4.jpg";
 
 function SetPicture() {
   const pageTransition = {
     duration: 1,
     stiffness: 0,
+    ease: "easeInOut",
   };
 
   const pageVariants = {
@@ -32,8 +40,12 @@ function SetPicture() {
       transition={pageTransition}
     >
       <div className="setPicture">
-        <div className="icon-left-open-big setArrowLeft"></div>
-        <div className="icon-right-open-big setArrowRight"></div>
+        <AwesomeSlider>
+          <div data-src={picture1} />
+          <div data-src={picture2} />
+          <div data-src={picture3} />
+          <div data-src={picture4} />
+        </AwesomeSlider>
       </div>
     </motion.div>
   );

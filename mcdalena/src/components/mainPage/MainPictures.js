@@ -5,6 +5,7 @@ function MainPictures(props) {
   const pageTransition = {
     duration: 1,
     stiffness: 0,
+    ease: "easeInOut",
   };
 
   const pageVariants = {
