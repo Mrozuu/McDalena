@@ -24,7 +24,6 @@ body {
 .setPicture {
   display: block;
   position: absolute;
-  background-size: 100% 100%;
   top: 0;
   left: 0;
   height: 100vh;
@@ -61,11 +60,7 @@ body {
 .setContent {
   display: block;
   position: absolute;
-  background-image: linear-gradient(
-    to right,
-    rgb(180, 180, 180),
-    rgb(255, 255, 219)
-  );
+  background-color: rgb(241, 247, 237);
   top: 0;
   left: 50%;
   width: 50%;
@@ -207,14 +202,15 @@ body {
   }
   
   / Handle on hover */
-.setContent > ::-webkit-scrollbar-thumb {
+.setContent> ::-webkit-scrollbar-thumb {
   background: rgb(202, 28, 28);
 }
 
 .littleLogo {
   display: block;
   position: absolute;
-  background-color: rgb(31, 27, 51);
+  background-color: transparent;
+  border-top: solid 1px black;
   top: 95vh;
   width: 100%;
   height: 5vh;
@@ -225,7 +221,7 @@ body {
   width: 100%;
 }
 
-.popup-wrapper > * {
+.popup-wrapper>* {
   width: 50%;
 }
 
@@ -243,20 +239,4 @@ body {
   font-size: 50px;
   z-index: 3;
   color: black;
-}
-
-.aws-btn {
-  --slider-height-percentage: 100%;
-  --slider-transition-duration: 300ms;
-  --organic-arrow-thickness: 4px;
-  --organic-arrow-border-radius: 0px;
-  --organic-arrow-height: 40px;
-  --organic-arrow-color: #538bd5;
-  --control-button-width: 10%;
-  --control-button-height: 25%;
-  --control-button-background: transparent;
-  --control-bullet-color: #62a4fa;
-  --control-bullet-active-color: #538bd5;
-  --loader-bar-color: #851515;
-  --loader-bar-height: 6px;
 }

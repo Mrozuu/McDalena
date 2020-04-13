@@ -8,12 +8,14 @@ body {
   position: relative;
   width: 70vw;
   height: 80vh;
+  margin-top: 50px;
   background-color: wheat;
   box-shadow: 0 10px 10px rgb(92, 92, 92);
+  z-index: 5;
 }
 
-.modal a{
-  z-index: 2;
+.modal a {
+  z-index: 5;
   cursor: pointer;
 }
 
@@ -35,9 +37,9 @@ body {
   width: 50%;
 }
 
-.recipeList{
+.recipeList {
   position: absolute;
-  top:30%;
+  top: 30%;
   bottom: 5%;
   left: 5%;
   right: 5%;
@@ -71,7 +73,7 @@ body {
   top: 25%;
   height: 60%;
   border-left: black solid 1px;
-  z-index: 1;
+  z-index: 5;
 }
 
 .iconIconCancel {
@@ -80,5 +82,3 @@ body {
   right: 0;
   font-size: 40px;
 }
-
-

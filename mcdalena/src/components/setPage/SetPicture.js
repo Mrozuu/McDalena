@@ -41,10 +41,10 @@ function SetPicture() {
     >
       <div className="setPicture">
         <AwesomeSlider>
-          <div data-src={picture1} />
-          <div data-src={picture2} />
-          <div data-src={picture3} />
-          <div data-src={picture4} />
+          <div style={{ backgroundImage: `url(${picture1})` }}></div>
+          <div style={{ backgroundImage: `url(${picture1})` }}></div>
+          <div style={{ backgroundImage: `url(${picture1})` }}></div>
+          <div style={{ backgroundImage: `url(${picture1})` }}></div>
         </AwesomeSlider>
       </div>
     </motion.div>

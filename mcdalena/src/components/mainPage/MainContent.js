@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import "./MainPageStyle.css";
 import MainContentButton from "./MainContentButton";
+import MainContentTitle from "./MainContentTitle.js";
 
 function MainContent(props) {
   const pageTransition = {
@@ -37,6 +38,7 @@ function MainContent(props) {
         className="mainContent"
         style={{ backgroundColor: props.backgroundColor }}
       >
+        <MainContentTitle />
         <MainContentButton buttonPath={props.buttonPath} />
       </div>
     </motion.div>

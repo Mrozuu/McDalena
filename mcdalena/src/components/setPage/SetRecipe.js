@@ -8,7 +8,7 @@ const contentStyle = {
   background: "rgba(255,255,255,0)",
   width: "70%",
   height: "80%",
-  border: "0"
+  border: "0",
 };
 
 class SetRecipe extends React.Component {
@@ -21,7 +21,9 @@ class SetRecipe extends React.Component {
     return (
       <Popup
         contentStyle={contentStyle}
-        overlayStyle={{ background: "rgba(255,255,255,0.1" }}
+        overlayStyle={
+          ({ background: "rgba(255,255,255,0.1" }, { zIndex: "11" })
+        }
         modal
         trigger={
           <button style={{ cursor: "pointer" }} className="setRecipe">
@@ -30,7 +32,7 @@ class SetRecipe extends React.Component {
           </button>
         }
       >
-        {close => <RecipePage close={close} />}
+        {(close) => <RecipePage close={close} />}
       </Popup>
     );
   }
