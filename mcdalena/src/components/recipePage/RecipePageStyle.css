@@ -1,9 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC&display=swap");
-
-body {
-  font-family: "IM Fell French Canon SC", serif;
-}
-
 .modal {
   position: relative;
   width: 70vw;
