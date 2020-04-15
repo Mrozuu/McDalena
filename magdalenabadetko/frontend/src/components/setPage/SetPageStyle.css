@@ -30,6 +30,15 @@
   background-repeat: no-repeat;
 }
 
+.awssld__content {
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.awssld__wrapper {
+  height: 100vh;
+}
+
 .setArrowLeft {
   position: absolute;
   margin-left: auto;
