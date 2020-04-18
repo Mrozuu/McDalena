@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./MainPageStyle.css";
 import { Route, Switch, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
@@ -18,6 +18,7 @@ const routes = [
     name: "set1",
     Component: MainSet,
     backgroundColor: "#54494B",
+    contentTitle: "set 1",
     buttonPath: "/SetPage1",
     backgroundImage: Photo5,
   },
@@ -26,6 +27,7 @@ const routes = [
     name: "set2",
     Component: MainSet,
     backgroundColor: "#F1F7ED",
+    contentTitle: "set 2",
     buttonPath: "/SetPage2",
     backgroundImage: Photo4,
   },
@@ -34,6 +36,7 @@ const routes = [
     name: "set3",
     Component: MainSet,
     backgroundColor: "#B9314F",
+    contentTitle: "set 3",
     buttonPath: "/SetPage3",
     backgroundImage: Photo3,
   },
@@ -42,6 +45,7 @@ const routes = [
     name: "set4",
     Component: MainSet,
     backgroundColor: "#D5A18E",
+    contentTitle: "set 4",
     buttonPath: "/SetPage4",
     backgroundImage: Photo4,
   },
@@ -50,6 +54,7 @@ const routes = [
     name: "set5",
     Component: MainSet,
     backgroundColor: "#A69658",
+    contentTitle: "set 5",
     buttonPath: "/SetPage4",
     backgroundImage: Photo5,
   },
@@ -71,9 +76,19 @@ const routes = [
   },
 ];
 
+var routes2 = null;
 function MainPage() {
   const location = useLocation();
 
+  useEffect(() => {
+    const apiUrl = "http://127.0.0.1:8000/api/sets/";
+
+    fetch(apiUrl)
+      .then((res) => res.json())
+      .then((result) => {
+        routes2 = result;
+      });
+  });
   return (
     <div className="mainPage">
       <MainLogo />
@@ -87,9 +102,11 @@ function MainPage() {
               backgroundColor,
               backgroundImage,
               buttonPath,
+              contentTitle,
             }) => (
               <Route key={path} exact path={path}>
                 <Component
+                  contentTitle={contentTitle}
                   backgroundColor={backgroundColor}
                   backgroundImage={backgroundImage}
                   buttonPath={buttonPath}

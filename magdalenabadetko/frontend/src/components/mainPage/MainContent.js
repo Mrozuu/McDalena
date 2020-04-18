@@ -38,7 +38,7 @@ function MainContent(props) {
         className="mainContent"
         style={{ backgroundColor: props.backgroundColor }}
       >
-        <MainContentTitle />
+        <MainContentTitle contentTitle={props.contentTitle} />
         <MainContentButton buttonPath={props.buttonPath} />
       </div>
     </motion.div>
