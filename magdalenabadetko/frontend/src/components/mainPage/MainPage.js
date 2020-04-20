@@ -12,7 +12,7 @@ import Photo3 from "../../img/set3.jpg";
 import Photo4 from "../../img/set4.jpg";
 import Photo5 from "../../img/set5.jpg";
 
-const routes = [
+var routes = [
   {
     path: "/MainSet1",
     name: "set1",
@@ -58,37 +58,33 @@ const routes = [
     buttonPath: "/SetPage4",
     backgroundImage: Photo5,
   },
-  {
-    path: "/SetPage1",
-    Component: SetPage,
-  },
-  {
-    path: "/SetPage2",
-    Component: SetPage,
-  },
-  {
-    path: "/SetPage3",
-    Component: SetPage,
-  },
-  {
-    path: "/SetPage4",
-    Component: SetPage,
-  },
 ];
 
-var routes2 = null;
+var routes3 = [];
 function MainPage() {
   const location = useLocation();
 
   useEffect(() => {
-    const apiUrl = "http://127.0.0.1:8000/api/sets/";
-
-    fetch(apiUrl)
+    fetch("http://127.0.0.1:8000/api/sets/")
       .then((res) => res.json())
-      .then((result) => {
-        routes2 = result;
+      .then((res) => {
+        routes3 = res.map((item) => {
+          if (item.Component === "MainSet") {
+            routes3[item.id - 1] = item;
+            routes3[item.id - 1].Component = MainSet;
+            routes3[item.id - 1].backgroundImage = Photo5;
+          }
+          return routes3;
+        });
+        return routes3;
+      })
+      .catch(function (error) {
+        console.log("error: " + error);
       });
   });
+
+  console.log(routes3);
+  console.log(routes[0].name);
   return (
     <div className="mainPage">
       <MainLogo />
@@ -97,6 +93,7 @@ function MainPage() {
         <Switch location={location} key={location.pathname}>
           {routes.map(
             ({
+              id,
               path,
               Component,
               backgroundColor,
@@ -104,7 +101,7 @@ function MainPage() {
               buttonPath,
               contentTitle,
             }) => (
-              <Route key={path} exact path={path}>
+              <Route key={id} exact path={path}>
                 <Component
                   contentTitle={contentTitle}
                   backgroundColor={backgroundColor}
