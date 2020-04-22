@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.css";
-import MainPage from "./components/mainPage/MainPage";
+import LoadingPage from "./LoadingPage";
 
 function App() {
-  return <MainPage />;
+  return <LoadingPage />;
 }
 
 export default App;
