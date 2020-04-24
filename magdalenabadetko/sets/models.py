@@ -6,7 +6,7 @@ class Set(models.Model):
 
     title = models.CharField(max_length=100)
     component = models.CharField(max_length=100)
-    backgroundImage = models.CharField(max_length=100)
+    backgroundImage = models.CharField(max_length=200)
     backgroundColor = models.CharField(max_length=100)
     path = models.CharField(max_length=100)
     buttonPath = models.CharField(max_length=100)
