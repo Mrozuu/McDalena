@@ -8,13 +8,13 @@ class Recipe(models.Model):
     description = models.CharField(max_length=2000)
     types = models.CharField(max_length=100)
     picture = models.CharField(max_length=100)
-    #ingredients = ArrayField(
-    #    models.CharField(max_length=100),
-    #    size=30
-    #)
-    #preparation = ArrayField(
-    #    models.CharField(max_length=200),
-    #    size=30
-    #) 
+    ingredients = ArrayField(
+        models.CharField(max_length=100),
+        size=30
+    )
+    preparation = ArrayField(
+        models.CharField(max_length=200),
+        size=30
+    ) 
 
 

@@ -10,8 +10,8 @@ class Set(models.Model):
     backgroundColor = models.CharField(max_length=100)
     path = models.CharField(max_length=100)
     buttonPath = models.CharField(max_length=100)
-    #listOfRecipes = ArrayField(
-    #    models.IntegerField(),
-    #    size=20
-    #)
+    listOfRecipes = ArrayField(
+        models.IntegerField(),
+        size=20
+    )
 
