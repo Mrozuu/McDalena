@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sets',
+    'recipes',
     'rest_framework'
 ]
 
@@ -77,14 +78,14 @@ WSGI_APPLICATION = 'magdalenabadetko.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        #'ENGINE': 'django.db.backends.postgresql',
-        #'NAME': 'mgompqkq',
-        #'USER' : 'mgompqkq',
-        #'PASSWORD' : 'hZomNVt7H7I9Y9U8-77vMpB_ROo4PWqi',
-        #'HOST' : 'rogue.db.elephantsql.com',
-        #'PORT' : '5432'
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'bxyclwtl',
+        'USER' : 'bxyclwtl',
+        'PASSWORD' : 'KasSFz6PLd43MdJ10f_aoBAph6q_Dlci',
+        'HOST' : 'rogue.db.elephantsql.com',
+        'PORT' : '5432'
     }
 }
 
