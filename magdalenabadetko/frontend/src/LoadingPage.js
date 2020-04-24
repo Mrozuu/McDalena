@@ -6,7 +6,8 @@ class LoadingPage extends React.Component {
   constructor() {
     super();
     this.state = {
-      data: [],
+      setsData: [],
+      routes: [],
       API: "http://127.0.0.1:8000/api/sets/",
       isLoading: false,
       error: null,
@@ -24,25 +25,32 @@ class LoadingPage extends React.Component {
         }
       })
       .then((data) => {
+        this.setState({ setsData: data });
         data.map((item) => {
-          if (item.Component === "MainSet") {
-            item.Component = MainSet;
-          }
+          this.setState({
+            routes: this.state.routes.concat("/MainSet" + (item.id - 1)),
+          });
+          this.setState({
+            routes: this.state.routes.concat("/SetPage" + (item.id - 1)),
+          });
           return item;
         });
         this.setState({ data, isLoading: false });
       })
       .catch((error) => this.setState({ error, isLoading: false }));
   }
+
   render() {
-    const { data, isLoading, error } = this.state;
+    console.log(this.state.setsData);
+    const { setsData, routes, isLoading, error } = this.state;
     if (error) {
       return <p style={{ backgroundColor: "white" }}>{error.message}</p>;
     }
     if (isLoading) {
       return <p style={{ backgroundColor: "white" }}>Loading ...</p>;
     }
-    return <MainPage data={data} />;
+
+    return <MainPage routes={routes} setData={setsData} />;
   }
 }
 export default LoadingPage;

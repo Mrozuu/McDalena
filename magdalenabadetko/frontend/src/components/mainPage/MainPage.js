@@ -78,7 +78,7 @@ var routes2 = [
 
 function MainPage(props) {
   var routes = props.data;
-  console.log(routes);
+
   const location = useLocation();
   return (
     <div className="mainPage">
