@@ -10,7 +10,7 @@ class MainContentTitle extends React.Component {
   render() {
     return (
       <div className="mainContentTitle">
-        <h1>{this.props.contentTitle}</h1>
+        <h1>{this.props.title}</h1>
         <div className="mainContentBar" />
       </div>
     );

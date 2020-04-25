@@ -4,8 +4,8 @@ import SetPicture from "./SetPicture";
 import SetContent from "./SetContent";
 
 class SetContentRoute extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {};
   }
 
@@ -13,7 +13,7 @@ class SetContentRoute extends React.Component {
     return (
       <div>
         <SetPicture />
-        <SetContent />
+        <SetContent setsData={this.props.setsData} />
       </div>
     );
   }

@@ -5,8 +5,8 @@ import { Route, Switch, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
 class SetPage extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       routes: [
         {
@@ -36,13 +36,7 @@ class SetPage extends React.Component {
   render() {
     return (
       <div className="setPage">
-        <Switch>
-          {this.state.routes.map(({ path, Component }) => (
-            <Route key={path} exact path={path}>
-              <Component />
-            </Route>
-          ))}
-        </Switch>
+        <SetContentRoute setsData={this.props.setsData} />
       </div>
     );
   }

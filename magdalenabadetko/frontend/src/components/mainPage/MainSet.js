@@ -7,17 +7,19 @@ import MainScrollBar from "./MainScrollBar";
 
 class MainSet extends React.Component {
   constructor(props) {
-    super();
+    super(props);
     this.state = {};
   }
+
   render() {
     return (
       <div>
-        <MainPictures backgroundImage={this.props.backgroundImage} />
+        <MainPictures backgroundImage={this.props.setsData.backgroundImage} />
         <MainContent
-          backgroundColor={this.props.backgroundColor}
-          buttonPath={this.props.buttonPath}
-          contentTitle={this.props.contentTitle}
+          backgroundColor={this.props.setsData.backgroundColor}
+          buttonPath={this.props.setsData.buttonPath}
+          title={this.props.setsData.title}
+          setsData={this.props.setsData.setsData}
         />
       </div>
     );

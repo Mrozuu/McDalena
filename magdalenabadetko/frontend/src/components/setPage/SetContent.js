@@ -6,7 +6,7 @@ import SetContentDescription from "./SetContentDescription";
 import LittleLogo from "./LittleLogo";
 import { AnimatePresence, motion } from "framer-motion";
 import SetReturn from "./SetReturn";
-function SetContent() {
+function SetContent(props) {
   const pageTransition = {
     duration: 1,
     stiffness: 0,
@@ -37,7 +37,7 @@ function SetContent() {
     >
       <div className="setContent">
         <SetReturn />
-        <SetTitle />
+        <SetTitle title={props.setsData.title} />
         <SetContentRecipes />
         <div className="setContentLines" />
         <SetContentDescription />

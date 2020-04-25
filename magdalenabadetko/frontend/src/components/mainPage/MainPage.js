@@ -77,7 +77,9 @@ var routes2 = [
 ];
 
 function MainPage(props) {
-  var routes = props.data;
+  const mainRoutes = props.mainRoutes;
+  const setsRoutes = props.setsRoutes;
+  const setsData = props.setsData;
 
   const location = useLocation();
   return (
@@ -86,26 +88,16 @@ function MainPage(props) {
       <MainScrollBar />
       <AnimatePresence>
         <Switch location={location} key={location.pathname}>
-          {routes2.map(
-            ({
-              id,
-              path,
-              Component,
-              backgroundColor,
-              backgroundImage,
-              buttonPath,
-              contentTitle,
-            }) => (
-              <Route key={id} exact path={path}>
-                <Component
-                  contentTitle={contentTitle}
-                  backgroundColor={backgroundColor}
-                  backgroundImage={backgroundImage}
-                  buttonPath={buttonPath}
-                />
-              </Route>
-            )
-          )}
+          {mainRoutes.map(({ id, path, Component }) => (
+            <Route key={id} exact path={path}>
+              <Component setsData={setsData[path.charAt(8) - 1]} />
+            </Route>
+          ))}
+          {setsRoutes.map(({ id, path, Component }) => (
+            <Route key={id} exact path={path}>
+              <Component setsData={setsData[path.charAt(8) - 1]} />
+            </Route>
+          ))}
         </Switch>
       </AnimatePresence>
     </div>

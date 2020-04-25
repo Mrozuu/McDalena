@@ -26,6 +26,7 @@ function MainContent(props) {
       y: "100vh",
     },
   };
+
   return (
     <motion.div
       initial="initial"
@@ -38,7 +39,7 @@ function MainContent(props) {
         className="mainContent"
         style={{ backgroundColor: props.backgroundColor }}
       >
-        <MainContentTitle contentTitle={props.contentTitle} />
+        <MainContentTitle title={props.title} />
         <MainContentButton buttonPath={props.buttonPath} />
       </div>
     </motion.div>
