@@ -175,8 +175,19 @@
   left: 5%;
   height: 80%;
   width: 45%;
-  background: url("../../img/set1.jpg");
   background-size: 100% 100%;
+}
+
+.setRecipePicture1 {
+  background: url("../../img/set1.jpg");
+}
+
+.setRecipePicture2 {
+  background: url("../../img/set2.jpg");
+}
+
+.setRecipePicture3 {
+  background: url("../../img/set3.jpg");
 }
 
 .setRecipeTitle {

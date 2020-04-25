@@ -18,6 +18,17 @@ class SetRecipe extends React.Component {
   }
 
   render() {
+    let className = '';
+    if (this.props.recipe.types === "przystawka") {
+      className += 'setRecipePicture1';
+    }
+    if (this.props.recipe.types === "glowne") {
+      className += 'setRecipePicture2';
+    }
+    if (this.props.recipe.types === "ork") {
+      className += 'setRecipePicture3';
+    }
+    className += ' setRecipePicture';
     return (
       <Popup
         contentStyle={contentStyle}
@@ -27,8 +38,8 @@ class SetRecipe extends React.Component {
         modal
         trigger={
           <button style={{ cursor: "pointer" }} className="setRecipe">
-            <div className="setRecipePicture" />
-            <div className="setRecipeTitle">Nazwa przepisu</div>
+            <div className={className} />
+        <div className="setRecipeTitle">{this.props.recipe.title}</div>
           </button>
         }
       >

@@ -13,7 +13,7 @@ class SetContentRoute extends React.Component {
     return (
       <div>
         <SetPicture />
-        <SetContent setsData={this.props.setsData} />
+        <SetContent recipesData={this.props.recipesData} setsData={this.props.setsData} />
       </div>
     );
   }

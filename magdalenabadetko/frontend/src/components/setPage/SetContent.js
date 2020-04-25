@@ -12,7 +12,6 @@ function SetContent(props) {
     stiffness: 0,
     ease: "easeInOut",
   };
-
   const pageVariants = {
     initial: {
       opacity: 1,
@@ -38,9 +37,9 @@ function SetContent(props) {
       <div className="setContent">
         <SetReturn />
         <SetTitle title={props.setsData.title} />
-        <SetContentRecipes />
+        <SetContentRecipes recipesData={props.recipesData} setsData={props.setsData} />
         <div className="setContentLines" />
-        <SetContentDescription />
+        <SetContentDescription description={props.setsData.description} />
         <LittleLogo />
       </div>
     </motion.div>

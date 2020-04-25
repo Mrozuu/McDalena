@@ -7,9 +7,11 @@ class LoadingPage extends React.Component {
     super();
     this.state = {
       setsData: [],
+      recipesData: [],
       mainRoutes: [],
       setsRoutes: [],
       API: "http://127.0.0.1:8000/api/sets/",
+      API2: "http://127.0.0.1:8000/api/recipes/",
       isLoading: false,
       error: null,
     };
@@ -42,13 +44,27 @@ class LoadingPage extends React.Component {
           });
           return item;
         });
+        this.setState({ data });
+      })
+      .catch((error) => this.setState({ error, isLoading: false }));
+      
+      fetch(this.state.API2)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Something went wrong ...");
+        }
+      })
+      .then((data) => {
+        this.setState({ recipesData: data });
         this.setState({ data, isLoading: false });
       })
       .catch((error) => this.setState({ error, isLoading: false }));
   }
 
   render() {
-    const { setsData, mainRoutes, setsRoutes, isLoading, error } = this.state;
+    const { setsData, recipesData, mainRoutes, setsRoutes, isLoading, error } = this.state;
     if (error) {
       return <p style={{ backgroundColor: "white" }}>{error.message}</p>;
     }
@@ -61,6 +77,7 @@ class LoadingPage extends React.Component {
         mainRoutes={mainRoutes}
         setsRoutes={setsRoutes}
         setsData={setsData}
+        recipesData={recipesData}
       />
     );
   }

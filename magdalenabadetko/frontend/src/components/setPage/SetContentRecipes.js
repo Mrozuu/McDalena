@@ -13,12 +13,10 @@ class SetContentRecipes extends React.Component {
   render() {
     return (
       <div className="setContentRecipes">
-        <SetRecipe />
-        <SetRecipe />
-        <SetRecipe />
-        <SetRecipe />
-        <SetRecipe />
-        <SetRecipe />
+          {this.props.setsData.listOfRecipes.map( item => (
+            <SetRecipe recipe={this.props.recipesData[item-1]}/>
+          ))}        
+
       </div>
     );
   }
