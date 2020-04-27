@@ -4,13 +4,6 @@ import Popup from "reactjs-popup";
 import "./SetPageStyle.css";
 import RecipePage from "../recipePage/RecipePage";
 
-const contentStyle = {
-  background: "rgba(255,255,255,0)",
-  width: "70%",
-  height: "80%",
-  border: "0",
-};
-
 class SetRecipe extends React.Component {
   constructor(props) {
     super(props);
@@ -52,7 +45,7 @@ class SetRecipe extends React.Component {
             null
           }
       </div>
-//         <RecipePage recipe={this.props.recipe} />
+    //         <RecipePage recipe={this.props.recipe} />
       // <Popup
       //   contentStyle={contentStyle}
       //   overlayStyle={
