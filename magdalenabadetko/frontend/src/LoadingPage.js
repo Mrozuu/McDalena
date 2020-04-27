@@ -2,6 +2,7 @@ import React from "react";
 import MainPage from "./components/mainPage/MainPage";
 import MainSet from "./components/mainPage/MainSet";
 import SetPage from "./components/setPage/SetPage";
+import './index.css'
 class LoadingPage extends React.Component {
   constructor() {
     super();
@@ -13,6 +14,8 @@ class LoadingPage extends React.Component {
       API: "http://127.0.0.1:8000/api/sets/",
       API2: "http://127.0.0.1:8000/api/recipes/",
       isLoading: false,
+      loaded: false,
+      className: 'loader',
       error: null,
     };
   }
@@ -58,27 +61,32 @@ class LoadingPage extends React.Component {
       })
       .then((data) => {
         this.setState({ recipesData: data });
-        this.setState({ data, isLoading: false });
+        this.setState({ data});
+        setTimeout(() => {
+          this.setState({className: 'loader loaded'})
+        }, 1000);
+        setTimeout(() => {
+          this.setState({isLoading:false})
+        },1000)
       })
-      .catch((error) => this.setState({ error, isLoading: false }));
+      .catch((error) => this.setState({ error,isLoading:false}));
+
   }
 
   render() {
-    const { setsData, recipesData, mainRoutes, setsRoutes, isLoading, error } = this.state;
+    const { setsData, recipesData, mainRoutes, setsRoutes, isLoading, className, error } = this.state;
     if (error) {
       return <p style={{ backgroundColor: "white" }}>{error.message}</p>;
     }
-    if (isLoading) {
-      return <p style={{ backgroundColor: "white" }}>Loading ...</p>;
-    }
-
     return (
+      <div className = {className}>
       <MainPage
         mainRoutes={mainRoutes}
         setsRoutes={setsRoutes}
         setsData={setsData}
         recipesData={recipesData}
       />
+      </div>
     );
   }
 }
