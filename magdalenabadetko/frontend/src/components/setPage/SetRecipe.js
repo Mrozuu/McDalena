@@ -14,8 +14,22 @@ const contentStyle = {
 class SetRecipe extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      showRecipe: false,
+    };
+    this.ButtonClick = this.ButtonClick.bind(this);
+    this.onChange = this.onChange.bind(this);
+
   }
+
+  ButtonClick() {
+    this.setState({
+      showRecipe: true,
+    });
+  }
+
+  onChange(newName) {   this.setState({ showRecipe: false });}
+
 
   render() {
     let className = '';
@@ -30,21 +44,30 @@ class SetRecipe extends React.Component {
     }
     className += ' setRecipePicture';
     return (
-      <Popup
-        contentStyle={contentStyle}
-        overlayStyle={
-          ({ background: "rgba(255,255,255,0.1" }, { zIndex: "11" })
-        }
-        modal
-        trigger={
-          <button style={{ cursor: "pointer" }} className="setRecipe">
-            <div className={className} />
-        <div className="setRecipeTitle">{this.props.recipe.title}</div>
-          </button>
-        }
-      >
-        {(close) => <RecipePage close={close} />}
-      </Popup>
+      <div class="setRecipe" onClick={this.ButtonClick}>
+          <div className={className}></div>
+          <div className="setRecipeTitle">{this.props.recipe.title}</div>
+          {this.state.showRecipe ?
+            <RecipePage recipe={this.props.recipe} showRecipe={this.state.showRecipe} closeRecipe={this.onChange}/> :
+            null
+          }
+      </div>
+//         <RecipePage recipe={this.props.recipe} />
+      // <Popup
+      //   contentStyle={contentStyle}
+      //   overlayStyle={
+      //     ({ background: "rgba(255,255,255,0.1" }, { zIndex: "11" })
+      //   }
+      //   modal
+      //   trigger={
+      //     <button style={{ cursor: "pointer" }} className="setRecipe">
+      //       <div className={className} />
+      //   <div className="setRecipeTitle">{this.props.recipe.title}</div>
+      //     </button>
+      //   }
+      // >
+      //   {(close) => <RecipePage close={close} />}
+      // </Popup>
     );
   }
 }
