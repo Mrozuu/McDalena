@@ -16,6 +16,8 @@ class LoadingPage extends React.Component {
       isLoading: false,
       loaded: false,
       className: 'loader',
+      classNameLeft: 'loader-left',
+      classNameRight: 'loader-right',
       error: null,
     };
   }
@@ -62,24 +64,33 @@ class LoadingPage extends React.Component {
       .then((data) => {
         this.setState({ recipesData: data });
         this.setState({ data});
-        setTimeout(() => {
+        setTimeout(()=> {
           this.setState({className: 'loader loaded'})
-        }, 1000);
+        },1000)
+        setTimeout(()=> {
+          this.setState({classNameLeft: 'loader-left loaded-left',
+          classNameRight: 'loader-right loaded-right'})
+        },2000)
         setTimeout(() => {
           this.setState({isLoading:false})
-        },1000)
-      })
+        },3000)
+
+      }
+      )
       .catch((error) => this.setState({ error,isLoading:false}));
 
   }
 
   render() {
-    const { setsData, recipesData, mainRoutes, setsRoutes, isLoading, className, error } = this.state;
+    const { setsData, recipesData, mainRoutes, setsRoutes, isLoading, className, classNameLeft,classNameRight, error } = this.state;
     if (error) {
       return <p style={{ backgroundColor: "white" }}>{error.message}</p>;
     }
+
     return (
-      <div className = {className}>
+      <div>
+      {isLoading ? <div><div className = {className} />
+      <div className = {classNameLeft}/><div className = {classNameRight}/></div>: null}
       <MainPage
         mainRoutes={mainRoutes}
         setsRoutes={setsRoutes}

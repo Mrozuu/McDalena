@@ -1,18 +1,52 @@
-
-
-   .loader{
-     width: 100vw;
-     height: 100vh;
-     z-index: 10;
-     background-color: white;
-     background-image: url('./img/logo1.svg');
-     background-position: center center;
-     z-index: 10;
-   }
-   .loaded {
+  .body {
     background-color: black;
-    transition: all 0.5s 0.5s ease-out;
-    z-index: 10;
-   }
+  }
 
+  .loader {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    background-image: url('./img/logo1.svg');
+    background-position: center center;
+    z-index: 6;
+  }
 
+  .loader-left {
+    position: absolute;
+    background-color: black;
+    width: 50vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 5;
+  }
+
+  .loader-right {
+    position: absolute;
+    background-color: black;
+    width: 50vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    z-index: 5;
+  }
+
+  .loaded {
+    transition: all 1s ease-in-out;
+    opacity: 0;
+  }
+
+  .loaded-right {
+    transition: all 1s ease-in-out;
+    transform: translateX(50vw);
+    -webkit-transform: translateX(50vw);
+    -ms-transform: translateX(50vw);
+  }
+
+  .loaded-left {
+    transition: all 1s ease-in-out;
+    transform: translateX(-50vw);
+    -webkit-transform: translateX(-50vw);
+    -ms-transform: translateX(-50vw);
+  }
