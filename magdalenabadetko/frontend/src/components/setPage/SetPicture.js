@@ -1,10 +1,7 @@
 import React from "react";
 import "./SetPageStyle.css";
 import "../../fontello/css/fontello.css";
-import {
-  AnimatePresence,
-  motion
-} from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 import AwesomeSlider from "react-awesome-slider";
 import withAutoplay from "react-awesome-slider/dist/autoplay";
@@ -37,58 +34,29 @@ function SetPicture() {
       y: "-100vh",
     },
   };
-  return ( <
-    motion.div initial = "initial"
-    animate = "in"
-    exit = "out"
-    variants = {
-      pageVariants
-    }
-    transition = {
-      pageTransition
-    } >
-    <
-    div className = "setPicture" >
-    <
-    AutoplaySlider play = {
-      true
-    }
-    cancelOnInteraction = {
-      false
-    }
-    interval = {
-      2000
-    }
-    bullets = {
-      false
-    }
-    fillParent = {
-      true
-    } >
-    <
-    div style = {
-      {
-        backgroundImage: `url(${picture1})`
-      }
-    } > < /div> <
-    div style = {
-      {
-        backgroundImage: `url(${picture2})`
-      }
-    } > < /div> <
-    div style = {
-      {
-        backgroundImage: `url(${picture3})`
-      }
-    } > < /div> <
-    div style = {
-      {
-        backgroundImage: `url(${picture4})`
-      }
-    } > < /div> <
-    /AutoplaySlider> <
-    /div> <
-    /motion.div>
+  return (
+    <motion.div
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={pageVariants}
+      transition={pageTransition}
+    >
+      <div className="setPicture">
+        <AutoplaySlider
+          play={true}
+          cancelOnInteraction={false}
+          interval={2000}
+          bullets={false}
+          fillParent={true}
+        >
+          <div style={{ backgroundImage: `url(${picture1})` }}></div>
+          <div style={{ backgroundImage: `url(${picture2})` }}></div>
+          <div style={{ backgroundImage: `url(${picture3})` }}></div>
+          <div style={{ backgroundImage: `url(${picture4})` }}></div>
+        </AutoplaySlider>
+      </div>
+    </motion.div>
   );
 }
 
