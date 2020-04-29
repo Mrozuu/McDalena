@@ -47,8 +47,8 @@
     40% {
       transform: translateY(-5vh);
     }
-    80%{
-      opacity: 0;
+    45%{
+      opacity:1;
     }
 
     100% {
