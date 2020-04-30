@@ -18,7 +18,7 @@ function MainPage(props) {
   return (
     <div className="mainPage">
       <MainLogo />
-      <MainScrollBar />
+      <MainScrollBar setsData={setsData} />
       <AnimatePresence>
         <Switch location={location} key={location.pathname}>
           {mainRoutes.map(({ id, path, Component }) => (
@@ -28,7 +28,10 @@ function MainPage(props) {
           ))}
           {setsRoutes.map(({ id, path, Component }) => (
             <Route key={id} exact path={path}>
-              <Component recipesData={recipesData} setsData={setsData[path.charAt(8) - 1]} />
+              <Component
+                recipesData={recipesData}
+                setsData={setsData[path.charAt(8) - 1]}
+              />
             </Route>
           ))}
         </Switch>

@@ -2,7 +2,7 @@ import React from "react";
 import MainPage from "./components/mainPage/MainPage";
 import MainSet from "./components/mainPage/MainSet";
 import SetPage from "./components/setPage/SetPage";
-import './index.css'
+import "./index.css";
 class LoadingPage extends React.Component {
   constructor() {
     super();
@@ -15,9 +15,9 @@ class LoadingPage extends React.Component {
       API2: "http://127.0.0.1:8000/api/recipes/",
       isLoading: false,
       loaded: false,
-      className: 'loader',
-      classNameLeft: 'loader-left',
-      classNameRight: 'loader-right',
+      className: "loader",
+      classNameLeft: "loader-left",
+      classNameRight: "loader-right",
       error: null,
     };
   }
@@ -52,8 +52,8 @@ class LoadingPage extends React.Component {
         this.setState({ data });
       })
       .catch((error) => this.setState({ error, isLoading: false }));
-      
-      fetch(this.state.API2)
+
+    fetch(this.state.API2)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -63,40 +63,54 @@ class LoadingPage extends React.Component {
       })
       .then((data) => {
         this.setState({ recipesData: data });
-        this.setState({ data});
-        setTimeout(()=> {
-          this.setState({className: 'loader loaded'})
-        },1000)
-        setTimeout(()=> {
-          this.setState({classNameLeft: 'loader-left loaded-left',
-          classNameRight: 'loader-right loaded-right'})
-        },2000)
+        this.setState({ data });
         setTimeout(() => {
-          this.setState({isLoading:false})
-        },3000)
-
-      }
-      )
-      .catch((error) => this.setState({ error,isLoading:false}));
-
+          this.setState({ className: "loader loaded" });
+        }, 1000);
+        setTimeout(() => {
+          this.setState({
+            classNameLeft: "loader-left loaded-left",
+            classNameRight: "loader-right loaded-right",
+          });
+        }, 2000);
+        setTimeout(() => {
+          this.setState({ isLoading: false });
+        }, 3000);
+      })
+      .catch((error) => this.setState({ error, isLoading: false }));
   }
 
   render() {
-    const { setsData, recipesData, mainRoutes, setsRoutes, isLoading, className, classNameLeft,classNameRight, error } = this.state;
+    const {
+      setsData,
+      recipesData,
+      mainRoutes,
+      setsRoutes,
+      isLoading,
+      className,
+      classNameLeft,
+      classNameRight,
+      error,
+    } = this.state;
     if (error) {
       return <p style={{ backgroundColor: "white" }}>{error.message}</p>;
     }
 
     return (
       <div>
-      {isLoading ? <div><div className = {className} />
-      <div className = {classNameLeft}/><div className = {classNameRight}/></div>: null}
-      <MainPage
-        mainRoutes={mainRoutes}
-        setsRoutes={setsRoutes}
-        setsData={setsData}
-        recipesData={recipesData}
-      />
+        {isLoading ? (
+          <div>
+            <div className={className} />
+            <div className={classNameLeft} />
+            <div className={classNameRight} />
+          </div>
+        ) : null}
+        <MainPage
+          mainRoutes={mainRoutes}
+          setsRoutes={setsRoutes}
+          setsData={setsData}
+          recipesData={recipesData}
+        />
       </div>
     );
   }

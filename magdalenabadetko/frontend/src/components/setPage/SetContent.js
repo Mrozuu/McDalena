@@ -35,9 +35,12 @@ function SetContent(props) {
       transition={pageTransition}
     >
       <div className="setContent">
-        <SetReturn />
+        <SetReturn return={props.setsData.path} />
         <SetTitle title={props.setsData.title} />
-        <SetContentRecipes recipesData={props.recipesData} setsData={props.setsData} />
+        <SetContentRecipes
+          recipesData={props.recipesData}
+          setsData={props.setsData}
+        />
         <div className="setContentLines" />
         <SetContentDescription description={props.setsData.description} />
         <LittleLogo />

@@ -10,7 +10,7 @@ class SetReturn extends React.Component {
 
   render() {
     return (
-      <NavLink to={"/MainSet1"}>
+      <NavLink to={this.props.return}>
         <div className="icon-cancel iconReturn"></div>
       </NavLink>
     );
