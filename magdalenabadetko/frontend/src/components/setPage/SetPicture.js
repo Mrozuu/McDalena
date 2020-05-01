@@ -13,6 +13,7 @@ import picture3 from "../../img/set3.jpg";
 import picture4 from "../../img/set4.jpg";
 
 function SetPicture(props) {
+  console.log(props.recipesData[0])
   const AutoplaySlider = withAutoplay(AwesomeSlider);
   const pageTransition = {
     duration: 1,
@@ -50,10 +51,9 @@ function SetPicture(props) {
           bullets={false}
           fillParent={true}
         >
-          <div style={{ backgroundImage: `url(${picture1})` }}></div>
-          <div style={{ backgroundImage: `url(${picture2})` }}></div>
-          <div style={{ backgroundImage: `url(${picture3})` }}></div>
-          <div style={{ backgroundImage: `url(${picture4})` }}></div>
+           {props.setsData.listOfRecipes.map( item => (
+            <div style={{ backgroundImage: `url(${props.recipesData[item-1].picture})` }}></div>
+          ))}        
         </AutoplaySlider>
       </div>
     </motion.div>

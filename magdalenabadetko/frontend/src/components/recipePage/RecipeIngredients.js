@@ -5,6 +5,13 @@ class RecipeIngredients extends React.Component {
   constructor() {
     super();
     this.state = {};
+
+    this.keyIngredients = 0;
+    this.getKey = this.getKey.bind(this);
+  }
+
+  getKey(){
+    return this.keyIngredients++;
   }
 
   render() {
@@ -15,7 +22,7 @@ class RecipeIngredients extends React.Component {
         <div className="recipeList">
           <ul>
             {this.props.ingredients.map(item => (
-              <li>{item}</li>  
+              <li key={this.getKey()}>{item}</li>  
             ))}
           </ul>
         </div>

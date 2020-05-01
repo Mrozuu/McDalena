@@ -12,7 +12,7 @@ class SetPage extends React.Component {
   render() {
     return (
       <div>
-        <SetPicture pictures={this.props.recipesData}/>
+        <SetPicture recipesData={this.props.recipesData} setsData={this.props.setsData}/>
         <SetContent recipesData={this.props.recipesData} setsData={this.props.setsData} />
       </div>
     );

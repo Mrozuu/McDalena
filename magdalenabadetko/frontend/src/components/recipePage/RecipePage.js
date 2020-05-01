@@ -4,9 +4,9 @@ import RecipeIngredients from "./RecipeIngredients";
 import RecipeContent from "./RecipeContent";
 
 class RecipePage extends React.Component {
-  constructor(props) {
-    super();
-  }
+  //constructor(props) {
+  //  super(props);
+  //}
 
   render() { 
     return (
