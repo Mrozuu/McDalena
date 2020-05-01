@@ -1,6 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import Popup from "reactjs-popup";
 import "./SetPageStyle.css";
 import RecipePage from "../recipePage/RecipePage";
 
@@ -8,20 +6,15 @@ class SetRecipe extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showRecipe: false,
+      showRecipe: false
     };
-    this.ButtonClick = this.ButtonClick.bind(this);
-    this.onChange = this.onChange.bind(this);
+
   }
 
-  ButtonClick() {
+  RecipePopup() {
     this.setState({
-      showRecipe: true,
+      showRecipe: !this.state.showRecipe
     });
-  }
-
-  onChange(newName) {
-    this.setState({ showRecipe: false });
   }
 
   render() {
@@ -37,14 +30,13 @@ class SetRecipe extends React.Component {
     }
     className += " setRecipePicture";
     return (
-      <div class="setRecipe" onClick={this.ButtonClick}>
+      <div className="setRecipe" onClick={this.RecipePopup.bind(this)}>
         <div className={className}></div>
         <div className="setRecipeTitle">{this.props.recipe.title}</div>
         {this.state.showRecipe ? (
           <RecipePage
             recipe={this.props.recipe}
-            showRecipe={this.state.showRecipe}
-            closeRecipe={this.onChange}
+            closePopup={this.RecipePopup.bind(this)}
           />
         ) : null}
       </div>

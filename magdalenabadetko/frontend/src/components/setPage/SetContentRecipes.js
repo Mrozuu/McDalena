@@ -5,9 +5,7 @@ import SetRecipe from "./SetRecipe";
 class SetContentRecipes extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      visible: false
-    };
+    this.state={};
   }
 
   render() {

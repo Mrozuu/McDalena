@@ -26,7 +26,7 @@ class MainScrollBar extends React.Component {
     return (
       <div onClick={this.ClickEvent} className={className}>
         {this.props.setsData.map(({ id, path }) => (
-          <Link to={path}>
+          <Link to={path} key={id}>
             <MainScrollDot id={id} />
           </Link>
         ))}

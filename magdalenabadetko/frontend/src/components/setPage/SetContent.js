@@ -3,7 +3,7 @@ import "./SetPageStyle.css";
 import SetTitle from "./SetTitle";
 import SetContentRecipes from "./SetContentRecipes";
 import SetContentDescription from "./SetContentDescription";
-import { AnimatePresence, motion } from "framer-motion";
+import {motion } from "framer-motion";
 import SetReturn from "./SetReturn";
 function SetContent(props) {
   const pageTransition = {

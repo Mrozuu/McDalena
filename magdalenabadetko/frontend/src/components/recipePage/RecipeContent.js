@@ -13,7 +13,13 @@ class RecipeContent extends React.Component {
     return (
       <div className="recipeContent">
         <RecipeTitle name={"Sposób przygotowania"} />
-        <div className="recipeList"></div>
+        <div className="recipeList">
+          <ol>
+            {this.props.preparation.map(item =>(
+              <li>{item}</li>
+            ))}
+          </ol>
+        </div>
       </div>
     );
   }

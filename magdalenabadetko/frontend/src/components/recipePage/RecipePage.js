@@ -2,48 +2,32 @@ import React from "react";
 import "./RecipePageStyle.css";
 import RecipeIngredients from "./RecipeIngredients";
 import RecipeContent from "./RecipeContent";
-import RecipeHeader from "./recipeHeader";
-
-
 
 class RecipePage extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = {
-      visible: true
-    };
-    this.handleClick = this.handleClick.bind(this);
-    console.log(this.props.showRecipe)
+    super();
   }
 
-  handleClick() {
-    this.setState(state => ({
-      visible: !state.visible
-    }));
-    console.log(this.state.visible)
-  }
-
-  render() {
-    let className = '';
-    if (this.state.visible === true) {
-      className += 'recipePageVisible';
-    }
-    if (this.state.visible === false) {
-      className += 'recipePageNonVisible';
-    }
-    console.log(className)
+  render() { 
     return (
-      <div className={className}>
+      <div>
         <div className="recipePageShadow"></div>
         <div className="recipePage">
-          <div className="close icon-cancel iconIconCancel" onClick={this.handleClick}></div>
-          <RecipeHeader title="Nazwa dania" />
-          <RecipeIngredients />
+          <div className="close icon-cancel iconIconCancel" onClick={this.props.closePopup}></div>
+          <div className="recipeHeader">
+            <h1>{this.props.recipe.title}</h1>
+            <div className="setIcons">
+              <img src="https://img.icons8.com/pastel-glyph/48/000000/garlic--v1.png" alt=""/>
+              <img src="https://img.icons8.com/android/48/000000/cooking-pot.png" alt=""/>
+              <img src="https://img.icons8.com/doodle/48/000000/cooking-book.png" alt=""/>
+            </div>
+          </div>
+          <RecipeIngredients ingredients={this.props.recipe.ingredients}/>
           <div className="recipeLine" />
-          <RecipeContent />
+          <RecipeContent preparation={this.props.recipe.preparation}/>
         </div>
       </div>
-    );
+    )
   }
 }
 

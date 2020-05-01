@@ -1,8 +1,7 @@
 import React from "react";
 import "./SetPageStyle.css";
-import SetContentRoute from "./SetContentRoute";
-import { Route, Switch, useLocation } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import SetPicture from "./SetPicture";
+import SetContent from "./SetContent";
 
 class SetPage extends React.Component {
   constructor(props) {
@@ -12,8 +11,9 @@ class SetPage extends React.Component {
 
   render() {
     return (
-      <div className="setPage">
-        <SetContentRoute recipesData={this.props.recipesData} setsData={this.props.setsData} />
+      <div>
+        <SetPicture pictures={this.props.recipesData}/>
+        <SetContent recipesData={this.props.recipesData} setsData={this.props.setsData} />
       </div>
     );
   }

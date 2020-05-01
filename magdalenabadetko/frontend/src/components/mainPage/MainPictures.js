@@ -1,6 +1,6 @@
 import React from "react";
 import "./MainPageStyle.css";
-import { AnimatePresence, motion } from "framer-motion";
+import {motion } from "framer-motion";
 function MainPictures(props) {
   const pageTransition = {
     duration: 1,
