@@ -9,9 +9,8 @@ class MainContentTitle extends React.Component {
 
   render() {
     return (
-      <div className="mainContentTitle">
+      <div className="mainContentTitle" style={{ fontWeight: "100" }}>
         <h1>{this.props.title}</h1>
-        <div className="mainContentBar" />
       </div>
     );
   }

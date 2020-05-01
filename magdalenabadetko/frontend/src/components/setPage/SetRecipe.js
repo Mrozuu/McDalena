@@ -12,7 +12,6 @@ class SetRecipe extends React.Component {
     };
     this.ButtonClick = this.ButtonClick.bind(this);
     this.onChange = this.onChange.bind(this);
-
   }
 
   ButtonClick() {
@@ -21,31 +20,35 @@ class SetRecipe extends React.Component {
     });
   }
 
-  onChange(newName) {   this.setState({ showRecipe: false });}
-
+  onChange(newName) {
+    this.setState({ showRecipe: false });
+  }
 
   render() {
-    let className = '';
+    let className = "";
     if (this.props.recipe.types === "przystawka") {
-      className += 'setRecipePicture1';
+      className += "setRecipePicture1";
     }
     if (this.props.recipe.types === "glowne") {
-      className += 'setRecipePicture2';
+      className += "setRecipePicture2";
     }
     if (this.props.recipe.types === "ork") {
-      className += 'setRecipePicture3';
+      className += "setRecipePicture3";
     }
-    className += ' setRecipePicture';
+    className += " setRecipePicture";
     return (
       <div class="setRecipe" onClick={this.ButtonClick}>
-          <div className={className}></div>
-          <div className="setRecipeTitle">{this.props.recipe.title}</div>
-          {this.state.showRecipe ?
-            <RecipePage recipe={this.props.recipe} showRecipe={this.state.showRecipe} closeRecipe={this.onChange}/> :
-            null
-          }
+        <div className={className}></div>
+        <div className="setRecipeTitle">{this.props.recipe.title}</div>
+        {this.state.showRecipe ? (
+          <RecipePage
+            recipe={this.props.recipe}
+            showRecipe={this.state.showRecipe}
+            closeRecipe={this.onChange}
+          />
+        ) : null}
       </div>
-    //         <RecipePage recipe={this.props.recipe} />
+      //         <RecipePage recipe={this.props.recipe} />
       // <Popup
       //   contentStyle={contentStyle}
       //   overlayStyle={

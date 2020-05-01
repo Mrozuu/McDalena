@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC&display=swap");
 
-
 .setPage {
   z-index: 100;
 }
@@ -84,6 +83,7 @@
 
 .setTitle h1 {
   font-size: 5vh;
+  font-weight: 300;
 }
 
 .setIcons img {
@@ -96,15 +96,19 @@
 
 .setContentDescription {
   position: absolute;
-  top: 20vh;
+  top: 15vh;
   left: 50%;
   width: 40%;
-  height: 70vh;
+  height: 100%;
   padding-right: 5%;
   padding-left: 5%;
   padding-top: 3vh;
   text-align: justify;
   overflow-y: hidden;
+}
+
+.setContentDescription h2 {
+  font-weight: 300;
 }
 
 .setContentDescription h2 {
@@ -115,10 +119,10 @@
   position: absolute;
   display: block;
   z-index: 3;
-  top: 35vh;
+  top: 20vh;
   left: 50%;
-  height: 55vh;
-  border-right: 2px solid black;
+  height: 63vh;
+  border-right: 0.1px solid black;
 }
 
 .setContentRecipes {
@@ -127,7 +131,7 @@
   overflow-x: hidden;
   top: 24vh;
   width: 50%;
-  height: 70vh;
+  height: 100%;
 }
 
 .setRecipe {
@@ -142,10 +146,10 @@
   position: relative;
   flex-direction: column;
   width: 90%;
-  height: 30%;
+  height: 15%;
   margin: auto;
   margin-top: 2.5%;
-  background-color: rgb(125, 114, 35);
+  border: 1px red solid;
 }
 
 .setRecipe:focus {
@@ -180,20 +184,21 @@
 }
 
 .setRecipePicture1 {
-  background: url("../../img/set1.jpg");
+  background: url("../../img/talerzyk.svg") no-repeat;
 }
 
 .setRecipePicture2 {
-  background: url("../../img/set2.jpg");
+  background: url("../../img/talerzyk.svg") no-repeat;
 }
 
 .setRecipePicture3 {
-  background: url("../../img/set3.jpg");
+  background: url("../../img/talerzyk.svg") no-repeat;
 }
 
 .setRecipeTitle {
   left: 60%;
   font-size: 20px;
+  font-weight: 300;
   position: absolute;
   top: 50%;
   -ms-transform: translateY(-50%);
@@ -205,17 +210,6 @@
   width: 10px;
 }
 
-/* Track /
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  }
-   
-  / Handle /
-  ::-webkit-scrollbar-thumb {
-    background: #888; 
-  }
-  
-  / Handle on hover */
 .setContent> ::-webkit-scrollbar-thumb {
   background: rgb(202, 28, 28);
 }
@@ -223,12 +217,13 @@
 .littleLogo {
   display: block;
   position: absolute;
-  background-color: transparent;
-  border-top: solid 1px black;
-  top: 95vh;
-  width: 100%;
-  height: 5vh;
-  left: 0;
+  height: 14vh;
+  width: 14vw;
+  top: 85vh;
+  left: calc(50% - 7vw);
+  background: url("../../img/migzer.svg") no-repeat center center;
+  background-size: 100% 100%;
+  z-index: 3;
 }
 
 .popup-wrapper {

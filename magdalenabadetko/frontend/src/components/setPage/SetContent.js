@@ -3,7 +3,6 @@ import "./SetPageStyle.css";
 import SetTitle from "./SetTitle";
 import SetContentRecipes from "./SetContentRecipes";
 import SetContentDescription from "./SetContentDescription";
-import LittleLogo from "./LittleLogo";
 import { AnimatePresence, motion } from "framer-motion";
 import SetReturn from "./SetReturn";
 function SetContent(props) {
@@ -43,7 +42,7 @@ function SetContent(props) {
         />
         <div className="setContentLines" />
         <SetContentDescription description={props.setsData.description} />
-        <LittleLogo />
+        <div className="littleLogo" />
       </div>
     </motion.div>
   );

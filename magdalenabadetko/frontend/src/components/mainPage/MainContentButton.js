@@ -12,7 +12,7 @@ class MainContentButton extends React.Component {
     return (
       <NavLink to={this.props.buttonPath}>
         <div className="mainContentButton">
-          <h2>POKAŻ OPIS</h2>
+          <h2>Zobacz więcej</h2>
         </div>
       </NavLink>
     );
