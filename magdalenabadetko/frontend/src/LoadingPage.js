@@ -97,7 +97,7 @@ class LoadingPage extends React.Component {
     }
 
     return (
-      <div >
+      <div>
         {isLoading ? (
           <div>
             <div className={className} />
