@@ -8,12 +8,17 @@ class SetPage extends React.Component {
     super(props);
     this.state = {};
   }
-
   render() {
     return (
       <div>
-        <SetPicture recipesData={this.props.recipesData} setsData={this.props.setsData}/>
-        <SetContent recipesData={this.props.recipesData} setsData={this.props.setsData} />
+        <SetPicture
+          recipesData={this.props.recipesData}
+          setsData={this.props.setsData}
+        />
+        <SetContent
+          recipesData={this.props.recipesData}
+          setsData={this.props.setsData}
+        />
       </div>
     );
   }

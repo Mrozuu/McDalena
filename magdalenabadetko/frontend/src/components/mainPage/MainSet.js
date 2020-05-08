@@ -16,10 +16,9 @@ class MainSet extends React.Component {
       <div>
         <MainPictures backgroundImage={this.props.setsData.backgroundImage} />
         <MainContent
-          backgroundColor={this.props.setsData.backgroundColor}
-          buttonPath={this.props.setsData.buttonPath}
+          backgroundColor={this.props.setsData.color}
+          buttonPath={this.props.setsData.id}
           title={this.props.setsData.title}
-          setsData={this.props.setsData.setsData}
         />
       </div>
     );

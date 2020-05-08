@@ -3,7 +3,7 @@ import "./SetPageStyle.css";
 import SetTitle from "./SetTitle";
 import SetContentRecipes from "./SetContentRecipes";
 import SetContentDescription from "./SetContentDescription";
-import {motion } from "framer-motion";
+import { motion } from "framer-motion";
 import SetReturn from "./SetReturn";
 function SetContent(props) {
   const pageTransition = {
@@ -25,6 +25,7 @@ function SetContent(props) {
       y: "100vh",
     },
   };
+  console.log(props.recipesData);
   return (
     <motion.div
       initial="initial"
@@ -34,8 +35,10 @@ function SetContent(props) {
       transition={pageTransition}
     >
       <div className="setContent">
-        <SetReturn return={props.setsData.path} />
-        <SetTitle title={props.setsData.title} />
+        <SetReturn return={`MainSet${props.setsData.id}`} />
+        <SetTitle
+          title={`${props.setsData.title}, ${props.setsData.titleExtension}`}
+        />
         <SetContentRecipes
           recipesData={props.recipesData}
           setsData={props.setsData}

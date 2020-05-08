@@ -1,7 +1,7 @@
 import React from "react";
 import "./SetPageStyle.css";
 import "../../fontello/css/fontello.css";
-import {motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 import AwesomeSlider from "react-awesome-slider";
 import withAutoplay from "react-awesome-slider/dist/autoplay";
@@ -13,7 +13,6 @@ import picture3 from "../../img/set3.jpg";
 import picture4 from "../../img/set4.jpg";
 
 function SetPicture(props) {
-  console.log(props.recipesData[0])
   const AutoplaySlider = withAutoplay(AwesomeSlider);
   const pageTransition = {
     duration: 1,
@@ -51,9 +50,10 @@ function SetPicture(props) {
           bullets={false}
           fillParent={true}
         >
-           {props.setsData.listOfRecipes.map( item => (
-            <div style={{ backgroundImage: `url(${props.recipesData[item-1].picture})` }}></div>
-          ))}        
+          {props.setsData.listOfRecipes.map((item) => (
+            <div /*{style={{ backgroundImage: `url(${props.recipesData[item-1].picture})` }}}*/
+            ></div>
+          ))}
         </AutoplaySlider>
       </div>
     </motion.div>

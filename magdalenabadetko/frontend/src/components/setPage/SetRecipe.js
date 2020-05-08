@@ -6,26 +6,26 @@ class SetRecipe extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showRecipe: false
+      showRecipe: false,
     };
-
   }
 
   RecipePopup() {
     this.setState({
-      showRecipe: !this.state.showRecipe
+      showRecipe: !this.state.showRecipe,
     });
   }
 
   render() {
+    console.log(this.props.recipe);
     let className = "";
     if (this.props.recipe.types === "przystawka") {
       className += "setRecipePicture1";
     }
-    if (this.props.recipe.types === "glowne") {
+    if (this.props.recipe.types === "danieGlowne") {
       className += "setRecipePicture2";
     }
-    if (this.props.recipe.types === "ork") {
+    if (this.props.recipe.types === "deser") {
       className += "setRecipePicture3";
     }
     className += " setRecipePicture";

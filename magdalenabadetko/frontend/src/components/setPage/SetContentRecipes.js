@@ -5,16 +5,19 @@ import SetRecipe from "./SetRecipe";
 class SetContentRecipes extends React.Component {
   constructor(props) {
     super(props);
-    this.state={};
+    this.state = {};
   }
 
   render() {
+    console.log(this.props.setsData.listOfRecipes);
     return (
       <div className="setContentRecipes">
-          {this.props.setsData.listOfRecipes.map( item => (
-            <SetRecipe recipe={this.props.recipesData[item-1]} key={this.props.recipesData[item-1].id} />
-          ))}        
-
+        {this.props.setsData.listOfRecipes.map((item) => (
+          <SetRecipe
+            recipe={this.props.recipesData[item - 1]}
+            key={this.props.recipesData[item - 1].id}
+          />
+        ))}
       </div>
     );
   }

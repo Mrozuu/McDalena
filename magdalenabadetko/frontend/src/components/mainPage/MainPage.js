@@ -1,10 +1,9 @@
 //import React, { useState, useEffect } from "react";
-import React from "react"
+import React from "react";
 import "./MainPageStyle.css";
 import { Route, Switch, useLocation } from "react-router-dom";
 //import { AnimatePresence, motion } from "framer-motion";
-import { AnimatePresence} from "framer-motion";
-
+import { AnimatePresence } from "framer-motion";
 
 import MainSet from "./MainSet";
 import SetPage from "../setPage/SetPage";
@@ -18,6 +17,8 @@ function MainPage(props) {
   const recipesData = props.recipesData;
 
   const location = useLocation();
+
+  console.log(setsData[0]);
   return (
     <div className="mainPage">
       <MainLogo />
