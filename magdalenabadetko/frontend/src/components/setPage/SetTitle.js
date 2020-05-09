@@ -10,7 +10,8 @@ class SetTitle extends React.Component {
   render() {
     return (
       <div className="setTitle">
-        <h1>{this.props.title}</h1>
+        <h1>{this.props.title.title}</h1>
+        <h2>{this.props.title.titleExtension}</h2>
       </div>
     );
   }

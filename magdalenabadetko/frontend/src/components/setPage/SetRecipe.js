@@ -17,7 +17,6 @@ class SetRecipe extends React.Component {
   }
 
   render() {
-    console.log(this.props.recipe);
     let className = "";
     if (this.props.recipe.types === "przystawka") {
       className += "setRecipePicture1";
@@ -40,22 +39,6 @@ class SetRecipe extends React.Component {
           />
         ) : null}
       </div>
-      //         <RecipePage recipe={this.props.recipe} />
-      // <Popup
-      //   contentStyle={contentStyle}
-      //   overlayStyle={
-      //     ({ background: "rgba(255,255,255,0.1" }, { zIndex: "11" })
-      //   }
-      //   modal
-      //   trigger={
-      //     <button style={{ cursor: "pointer" }} className="setRecipe">
-      //       <div className={className} />
-      //   <div className="setRecipeTitle">{this.props.recipe.title}</div>
-      //     </button>
-      //   }
-      // >
-      //   {(close) => <RecipePage close={close} />}
-      // </Popup>
     );
   }
 }

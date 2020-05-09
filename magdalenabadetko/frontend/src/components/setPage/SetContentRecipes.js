@@ -9,9 +9,9 @@ class SetContentRecipes extends React.Component {
   }
 
   render() {
-    console.log(this.props.setsData.listOfRecipes);
     return (
       <div className="setContentRecipes">
+        <h2>Przepisy</h2>
         {this.props.setsData.listOfRecipes.map((item) => (
           <SetRecipe
             recipe={this.props.recipesData[item - 1]}

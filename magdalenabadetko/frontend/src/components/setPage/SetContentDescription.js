@@ -10,8 +10,8 @@ class SetContentDescription extends React.Component {
   render() {
     return (
       <div className="setContentDescription">
-        <h2>Krótki opis</h2>
-          <p>{this.props.description}</p>
+        <h2>Opis</h2>
+        <p>{this.props.description}</p>
       </div>
     );
   }

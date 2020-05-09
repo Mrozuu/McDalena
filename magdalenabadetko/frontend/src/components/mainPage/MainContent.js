@@ -27,7 +27,6 @@ function MainContent(props) {
       y: "100vh",
     },
   };
-  console.log(props);
   return (
     <motion.div
       initial="initial"

@@ -73,7 +73,7 @@
   position: absolute;
   display: block;
   height: 15vh;
-  top: 13vh;
+  top: 5vh;
   left: 0;
   right: 0;
   margin-left: auto;
@@ -84,6 +84,12 @@
 .setTitle h1 {
   font-size: 4vh;
   font-weight: 300;
+}
+
+.setTitle h2 {
+  font-size: 3vh;
+  font-weight: 300;
+  padding-top: 3vh;
 }
 
 .setIcons img {
@@ -132,9 +138,18 @@
   position: absolute;
   overflow: scroll;
   overflow-x: hidden;
-  top: 24vh;
+  top: 18vh;
+  padding-top: 3vh;
   width: 50%;
   height: 100%;
+  position: absolute;
+  text-align: justify;
+  overflow-y: hidden;
+}
+
+.setContentRecipes h2 {
+  font-weight: 300;
+  text-align: center;
 }
 
 .setRecipe {
@@ -224,18 +239,43 @@
   width: 50%;
 }
 
-.iconIconCancel {
+.returnButton {
   position: absolute;
-  top: 1%;
-  right: 0;
-  font-size: 40px;
+  top: 30px;
+  right: 0px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  opacity: 0.5;
 }
 
-.iconReturn {
+.returnButton:hover {
+  opacity: 1;
+}
+
+.button {
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  transition: all .5s ease-in-out;
+}
+
+.button::before,
+.button::after {
+  content: "";
   position: absolute;
-  top: 1%;
-  right: 0%;
-  font-size: 50px;
-  z-index: 3;
-  color: black;
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  background: black;
+  transition: all .5s ease-in-out;
+}
+
+.button::before {
+  transform: rotate(45deg);
+}
+
+.button::after {
+  transform: rotate(-45deg);
 }

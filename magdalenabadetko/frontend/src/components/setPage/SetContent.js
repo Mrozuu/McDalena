@@ -25,7 +25,6 @@ function SetContent(props) {
       y: "100vh",
     },
   };
-  console.log(props.recipesData);
   return (
     <motion.div
       initial="initial"
@@ -36,9 +35,7 @@ function SetContent(props) {
     >
       <div className="setContent">
         <SetReturn return={`MainSet${props.setsData.id}`} />
-        <SetTitle
-          title={`${props.setsData.title}, ${props.setsData.titleExtension}`}
-        />
+        <SetTitle title={props.setsData} />
         <SetContentRecipes
           recipesData={props.recipesData}
           setsData={props.setsData}
