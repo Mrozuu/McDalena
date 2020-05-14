@@ -15,7 +15,9 @@ class SetContentRecipes extends React.Component {
       <div className="setContentRecipes">
         <h2>Przepisy</h2>
         {this.props.setsData.listOfRecipes.map((item) => {
-          console.log(this.props.recipesData[item-1].listOfRecipes);
+          this.props.recipesData[item-1].listOfElements.map((item2) => {
+            // instructions.concat /// TO DO
+          })
           return(
           <SetRecipe
             recipe={this.props.recipesData[item - 1]}
