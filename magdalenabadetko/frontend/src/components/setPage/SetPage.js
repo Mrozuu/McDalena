@@ -17,6 +17,7 @@ class SetPage extends React.Component {
         />
         <SetContent
           recipesData={this.props.recipesData}
+          instructionsData={this.props.instructionsData}
           setsData={this.props.setsData}
         />
       </div>

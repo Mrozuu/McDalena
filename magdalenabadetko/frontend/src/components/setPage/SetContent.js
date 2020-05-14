@@ -38,6 +38,7 @@ function SetContent(props) {
         <SetTitle title={props.setsData} />
         <SetContentRecipes
           recipesData={props.recipesData}
+          instructionsData={props.instructionsData}
           setsData={props.setsData}
         />
         <div className="setContentLines" />
