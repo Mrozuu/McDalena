@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'sets',
     'recipes',
+    'instructions',
     'rest_framework'
 ]
 

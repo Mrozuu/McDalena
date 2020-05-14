@@ -15,6 +15,7 @@ function MainPage(props) {
   const setsRoutes = props.setsRoutes;
   const setsData = props.setsData;
   const recipesData = props.recipesData;
+  const instructionsData = props.instructionsData;
 
   const location = useLocation();
   return (
@@ -32,6 +33,7 @@ function MainPage(props) {
             <Route exact path={path} key={id}>
               <Component
                 recipesData={recipesData}
+                instructionsData={instructionsData}
                 setsData={setsData[path.charAt(8) - 1]}
                 key={id}
               />

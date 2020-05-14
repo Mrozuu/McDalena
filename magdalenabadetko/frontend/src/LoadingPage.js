@@ -9,10 +9,12 @@ class LoadingPage extends React.Component {
     this.state = {
       setsData: [],
       recipesData: [],
+      instructionsData: [],
       mainRoutes: [],
       setsRoutes: [],
       API: "http://127.0.0.1:8000/api/sets/",
       API2: "http://127.0.0.1:8000/api/recipes/",
+      API3: "http://127.0.0.1:8000/api/instructions/",
       isLoading: false,
       loaded: false,
       className: "loader",
@@ -75,12 +77,38 @@ class LoadingPage extends React.Component {
         }, 3000);
       })
       .catch((error) => this.setState({ error, isLoading: false }));
+
+      fetch(this.state.API3)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Something went wrong ...");
+        }
+      })
+      .then((data) => {
+        this.setState({ instructionsData: data });
+        setTimeout(() => {
+          this.setState({ className: "loader loaded" });
+        }, 1000);
+        setTimeout(() => {
+          this.setState({
+            classNameLeft: "loader-left loaded-left",
+            classNameRight: "loader-right loaded-right",
+          });
+        }, 2000);
+        setTimeout(() => {
+          this.setState({ isLoading: false });
+        }, 3000);
+      })
+      .catch((error) => this.setState({ error, isLoading: false }));
   }
 
   render() {
     const {
       setsData,
       recipesData,
+      instructionsData,
       mainRoutes,
       setsRoutes,
       isLoading,
@@ -92,7 +120,6 @@ class LoadingPage extends React.Component {
     if (error) {
       return <p style={{ backgroundColor: "white" }}>{error.message}</p>;
     }
-
     return (
       <div>
         {isLoading ? (
@@ -107,6 +134,7 @@ class LoadingPage extends React.Component {
           setsRoutes={setsRoutes}
           setsData={setsData}
           recipesData={recipesData}
+          instructionsData = {instructionsData}
         />
       </div>
     );
