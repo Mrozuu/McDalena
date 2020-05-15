@@ -42,7 +42,9 @@ class LoadingPage extends React.Component {
               path: "/MainSet" + item.id,
               Component: MainSet,
             }),
-            setsRoutes: this.state.mainRoutes.concat({
+          });
+          this.setState({
+            setsRoutes: this.state.setsRoutes.concat({
               path: "/SetPage" + item.id,
               Component: SetPage,
             }),
@@ -63,22 +65,10 @@ class LoadingPage extends React.Component {
       })
       .then((data) => {
         this.setState({ recipesData: data });
-        setTimeout(() => {
-          this.setState({ className: "loader loaded" });
-        }, 1000);
-        setTimeout(() => {
-          this.setState({
-            classNameLeft: "loader-left loaded-left",
-            classNameRight: "loader-right loaded-right",
-          });
-        }, 2000);
-        setTimeout(() => {
-          this.setState({ isLoading: false });
-        }, 3000);
       })
       .catch((error) => this.setState({ error, isLoading: false }));
 
-      fetch(this.state.API3)
+    fetch(this.state.API3)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -134,7 +124,7 @@ class LoadingPage extends React.Component {
           setsRoutes={setsRoutes}
           setsData={setsData}
           recipesData={recipesData}
-          instructionsData = {instructionsData}
+          instructionsData={instructionsData}
         />
       </div>
     );

@@ -16,8 +16,8 @@ function MainPage(props) {
   const setsData = props.setsData;
   const recipesData = props.recipesData;
   const instructionsData = props.instructionsData;
-
   const location = useLocation();
+  console.log(setsRoutes);
   return (
     <div className="mainPage">
       <MainLogo />
