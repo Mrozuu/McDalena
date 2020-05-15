@@ -4,9 +4,9 @@ import RecipeIngredients from "./RecipeIngredients";
 import RecipeContent from "./RecipeContent";
 
 class RecipePage extends React.Component {
-  //constructor(props) {
-  //  super(props);
-  //}
+  constructor(props) {
+    super(props);
+  }
 
   render() {
     return (
@@ -20,9 +20,15 @@ class RecipePage extends React.Component {
           <div className="recipeHeader">
             <h1>{this.props.recipe.title}</h1>
           </div>
-          <RecipeIngredients ingredients={this.props.recipe.ingredients} />
+          <RecipeIngredients
+            instructions={this.props.instructions}
+            listOfElements={this.props.recipe.listOfElements}
+          />
           <div className="recipeLine" />
-          <RecipeContent preparation={this.props.recipe.preparation} />
+          <RecipeContent
+            instructions={this.props.instructions}
+            listOfElements={this.props.recipe.listOfElements}
+          />
         </div>
       </div>
     );
@@ -30,7 +36,3 @@ class RecipePage extends React.Component {
 }
 
 export default RecipePage;
-
-//export default ({ close }) => (
-//  <div className="modal">
-//      <a className="close icon-cancel iconIconCancel" onClick={close}>

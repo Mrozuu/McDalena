@@ -10,7 +10,7 @@ class RecipeIngredients extends React.Component {
     this.getKey = this.getKey.bind(this);
   }
 
-  getKey(){
+  getKey() {
     return this.keyIngredients++;
   }
 
@@ -18,13 +18,31 @@ class RecipeIngredients extends React.Component {
     return (
       <div className="recipeIngredients">
         <RecipeTitle name={"Składniki"} />
-
         <div className="recipeList">
-          <ul>
-            {this.props.ingredients.map(item => (
-              <li key={this.getKey()}>{item}</li>  
-            ))}
-          </ul>
+          {this.props.listOfElements.map((item) => {
+            return this.props.instructions[item - 1].name === "null" ? (
+              <div>
+                <ul>
+                  {this.props.instructions[item - 1].ingredients.map(
+                    (item2) => {
+                      return <li>{item2}</li>;
+                    }
+                  )}
+                </ul>
+              </div>
+            ) : (
+              <div>
+                <h2>{this.props.instructions[item - 1].name}</h2>
+                <ul>
+                  {this.props.instructions[item - 1].ingredients.map(
+                    (item2) => {
+                      return <li>{item2}</li>;
+                    }
+                  )}
+                </ul>
+              </div>
+            );
+          })}
         </div>
       </div>
     );

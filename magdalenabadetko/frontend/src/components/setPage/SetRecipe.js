@@ -34,6 +34,7 @@ class SetRecipe extends React.Component {
         <div className="setRecipeTitle">{this.props.recipe.title}</div>
         {this.state.showRecipe ? (
           <RecipePage
+            instructions={this.props.instructions}
             recipe={this.props.recipe}
             closePopup={this.RecipePopup.bind(this)}
           />

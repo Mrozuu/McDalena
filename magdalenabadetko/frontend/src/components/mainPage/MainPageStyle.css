@@ -43,9 +43,10 @@ body {
 
 .mainContentTitle {
   position: absolute;
-  left: 50%;
-  top: 40%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  top: 37%;
+  display: inline-block;
+  text-align: center;
 }
 
 .mainContentTitle h1 {
@@ -64,7 +65,7 @@ body {
 .mainContentBar2 {
   position: absolute;
   left: 50%;
-  top: 57%;
+  top: 56%;
   width: 300px;
   transform: translate(-50%, -50%);
   border-bottom: 1px solid black;

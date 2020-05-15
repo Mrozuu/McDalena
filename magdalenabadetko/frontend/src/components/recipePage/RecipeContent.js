@@ -4,15 +4,15 @@ import RecipeTitle from "./RecipeTitle";
 import "../data/RecipeData";
 
 class RecipeContent extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {};
 
     this.keyContent = 0;
     this.getKey = this.getKey.bind(this);
   }
 
-  getKey(){
+  getKey() {
     return this.keyContent++;
   }
 
@@ -21,11 +21,16 @@ class RecipeContent extends React.Component {
       <div className="recipeContent">
         <RecipeTitle name={"Sposób przygotowania"} />
         <div className="recipeList">
-          <ol>
-            {this.props.preparation.map(item =>(
-              <li key={this.getKey()}>{item}</li>
-            ))}
-          </ol>
+          {this.props.listOfElements.map((item) => {
+            return this.props.instructions[item - 1].name === "null" ? (
+              <div>{this.props.instructions[item - 1].preparation}</div>
+            ) : (
+              <div>
+                <h2>{this.props.instructions[item - 1].name}</h2>
+                <div>{this.props.instructions[item - 1].preparation}</div>
+              </div>
+            );
+          })}
         </div>
       </div>
     );
