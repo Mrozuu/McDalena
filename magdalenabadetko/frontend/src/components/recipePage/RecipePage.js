@@ -13,10 +13,9 @@ class RecipePage extends React.Component {
       <div>
         <div className="recipePageShadow"></div>
         <div className="recipePage">
-          <div
-            className="close icon-cancel iconIconCancel"
-            onClick={this.props.closePopup}
-          ></div>
+          <div className="returnButton" onClick={this.props.closePopup}>
+            <div className="button" />
+          </div>
           <div className="recipeHeader">
             <h1>{this.props.recipe.title}</h1>
           </div>

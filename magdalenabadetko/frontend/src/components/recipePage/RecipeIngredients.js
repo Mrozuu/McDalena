@@ -1,10 +1,11 @@
 import React from "react";
 import "./RecipePageStyle.css";
 import RecipeTitle from "./RecipeTitle";
+import arrow from "../../img/arrow.svg";
 class RecipeIngredients extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = { height: 0, scrollHeight: 0 };
 
     this.keyIngredients = 0;
     this.getKey = this.getKey.bind(this);
@@ -14,11 +15,32 @@ class RecipeIngredients extends React.Component {
     return this.keyIngredients++;
   }
 
+  resizeHandler() {
+    const height = this.divElement.clientHeight;
+    const scrollHeight = this.divElement.scrollHeight;
+    this.setState({ height, scrollHeight });
+  }
+
+  componentDidMount() {
+    this.resizeHandler();
+    window.addEventListener("resize", this.resizeHandler);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.resizeHandler);
+  }
+
   render() {
+    var { scrollHeight, height } = this.state;
     return (
       <div className="recipeIngredients">
         <RecipeTitle name={"Składniki"} />
-        <div className="recipeList">
+        <div
+          className="recipeList"
+          ref={(divElement) => {
+            this.divElement = divElement;
+          }}
+        >
           {this.props.listOfElements.map((item) => {
             return this.props.instructions[item - 1].name === "null" ? (
               <div>
@@ -44,6 +66,10 @@ class RecipeIngredients extends React.Component {
             );
           })}
         </div>
+        <img
+          src={arrow}
+          className={scrollHeight > height ? "arrowVisible" : "arrowNot"}
+        />
       </div>
     );
   }

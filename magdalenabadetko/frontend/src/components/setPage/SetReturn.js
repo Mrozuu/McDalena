@@ -5,15 +5,13 @@ import { NavLink } from "react-router-dom";
 class SetReturn extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      name: "returnButton",
-    };
+    this.state = {};
   }
 
   render() {
     return (
       <NavLink to={this.props.return}>
-        <div className={this.state.name}>
+        <div className="returnButton">
           <div className="button" />
         </div>
       </NavLink>

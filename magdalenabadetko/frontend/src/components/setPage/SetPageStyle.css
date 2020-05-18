@@ -89,7 +89,6 @@
 .setTitle h2 {
   font-size: 3vh;
   font-weight: 300;
-  padding-top: 3vh;
 }
 
 .setIcons img {
@@ -241,8 +240,8 @@
 
 .returnButton {
   position: absolute;
-  top: 30px;
-  right: 0px;
+  top: 5px;
+  right: 5px;
   width: 60px;
   height: 60px;
   cursor: pointer;
@@ -255,6 +254,9 @@
 }
 
 .button {
+  position: absolute;
+  top: 26px;
+  left: 10px;
   width: 40px;
   height: 4px;
   border-radius: 2px;

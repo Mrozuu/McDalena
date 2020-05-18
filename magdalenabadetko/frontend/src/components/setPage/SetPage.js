@@ -9,7 +9,6 @@ class SetPage extends React.Component {
     this.state = {};
   }
   render() {
-    console.log(this.props.setsData);
     return (
       <div>
         <SetPicture
