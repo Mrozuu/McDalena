@@ -132,7 +132,7 @@ body {
   z-index: 4;
   background: url("../../img/foodloosenapis.svg") no-repeat 100% 100%;
   background-position: center center;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.5);
   left: calc(50vw - 175px);
   width: 350px;
   height: 100px;
@@ -177,7 +177,7 @@ body {
 
 .mainScrollDot {
   background-color: none;
-  border: 1.5px solid black;
+  border: 1px solid black;
   height: 15px;
   width: 15px;
   margin: auto;
