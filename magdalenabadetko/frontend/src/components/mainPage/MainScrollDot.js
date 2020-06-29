@@ -2,15 +2,16 @@ import React from "react";
 import "./MainPageStyle.css";
 
 class MainScrollDot extends React.Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-
   render() {
     return (
       <div className="mainScrollBackgroundDot">
-        <div className="mainScrollDot"></div>
+        <div
+          className={
+            this.props.activeClass === "active"
+              ? "mainScrollDot active__set"
+              : "mainScrollDot"
+          }
+        ></div>
       </div>
     );
   }

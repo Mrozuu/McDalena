@@ -132,7 +132,7 @@ body {
   z-index: 4;
   background: url("../../img/foodloosenapis.svg") no-repeat 100% 100%;
   background-position: center center;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 238, 226, 0.5);
   left: calc(50vw - 175px);
   width: 350px;
   height: 100px;
@@ -190,6 +190,13 @@ body {
   transform: scale(1.2);
   background-color: black;
 
+}
+
+.active__set {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+  background-color: black
 }
 
 .mainScrollBarClicked {
