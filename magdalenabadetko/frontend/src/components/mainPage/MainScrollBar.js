@@ -1,7 +1,7 @@
 import React from "react";
 import "./MainPageStyle.css";
 import MainScrollDot from "./MainScrollDot";
-import { Link, NavLink, matchPath } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 class MainScrollBar extends React.Component {
   constructor(props) {
@@ -26,15 +26,8 @@ class MainScrollBar extends React.Component {
     return (
       <div onClick={this.ClickEvent} className={className}>
         {this.props.setsData.map((item) => (
-          <Link activeClassName="active__set" to={`MainSet${item.id}`}>
-            <MainScrollDot
-              activeClass={
-                window.location.pathname === `/MainSet${item.id}`
-                  ? "active"
-                  : ""
-              }
-              id={item.id}
-            />
+          <Link to={`MainSet${item.id}`}>
+            <MainScrollDot id={item.id} />
           </Link>
         ))}
       </div>

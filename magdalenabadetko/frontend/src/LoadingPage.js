@@ -2,13 +2,7 @@ import React from "react";
 import MainPage from "./components/mainPage/MainPage";
 import MainSet from "./components/mainPage/MainSet";
 import SetPage from "./components/setPage/SetPage";
-
 import "./index.css";
-
-import loadingPhoto1 from "./img/dezerek.svg";
-import loadingPhoto2 from "./img/rondel.svg";
-import loadingPhoto3 from "./img/migzer.svg";
-
 class LoadingPage extends React.Component {
   constructor() {
     super();
@@ -24,8 +18,8 @@ class LoadingPage extends React.Component {
       isLoading: false,
       loaded: false,
       className: "loader",
-      classNameBackground: "loader__background",
-      classNamePhoto: "loading__photo",
+      classNameLeft: "loader-left",
+      classNameRight: "loader-right",
       error: null,
     };
   }
@@ -85,19 +79,17 @@ class LoadingPage extends React.Component {
       .then((data) => {
         this.setState({ instructionsData: data });
         setTimeout(() => {
+          this.setState({ className: "loader loaded" });
+        }, 1000);
+        setTimeout(() => {
           this.setState({
-            className: "loader loaded",
-            classNamePhoto: "loading__photo loaded__photo",
+            classNameLeft: "loader-left loaded-left",
+            classNameRight: "loader-right loaded-right",
           });
         }, 2000);
         setTimeout(() => {
-          this.setState({
-            classNameBackground: "loader__background loaded__background",
-          });
-        }, 3000);
-        setTimeout(() => {
           this.setState({ isLoading: false });
-        }, 4000);
+        }, 3000);
       })
       .catch((error) => this.setState({ error, isLoading: false }));
   }
@@ -111,8 +103,8 @@ class LoadingPage extends React.Component {
       setsRoutes,
       isLoading,
       className,
-      classNameBackground,
-      classNamePhoto,
+      classNameLeft,
+      classNameRight,
       error,
     } = this.state;
     if (error) {
@@ -121,9 +113,10 @@ class LoadingPage extends React.Component {
     return (
       <div>
         {isLoading ? (
-          <div className={classNameBackground}>
+          <div>
             <div className={className} />
-            <div className={classNamePhoto}></div>
+            <div className={classNameLeft} />
+            <div className={classNameRight} />
           </div>
         ) : null}
         <MainPage

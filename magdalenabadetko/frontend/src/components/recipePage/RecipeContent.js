@@ -20,7 +20,6 @@ class RecipeContent extends React.Component {
   resizeHandler() {
     const height = this.divElement.clientHeight;
     const scrollHeight = this.divElement.scrollHeight;
-    const scrollOffset = this.divElement.offsetHeight;
     this.setState({ height, scrollHeight });
   }
 
@@ -48,11 +47,11 @@ class RecipeContent extends React.Component {
             return this.props.instructions[item - 1].name === "null" ? (
               <p>{this.props.instructions[item - 1].preparation}</p>
             ) : (
-                <div>
-                  <h2>{this.props.instructions[item - 1].name}</h2>
-                  <p>{this.props.instructions[item - 1].preparation}</p>
-                </div>
-              );
+              <div>
+                <h2>{this.props.instructions[item - 1].name}</h2>
+                <p>{this.props.instructions[item - 1].preparation}</p>
+              </div>
+            );
           })}
         </div>
         <img
