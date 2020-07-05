@@ -82,11 +82,11 @@ DATABASES = {
         #'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mgompqkq',
-        'USER' : 'mgompqkq',
-        'PASSWORD' : 'hZomNVt7H7I9Y9U8-77vMpB_ROo4PWqi',
-        'HOST' : 'rogue.db.elephantsql.com',
-        'PORT' : '5432'
+        'NAME': 'magdalenabadetko',
+        'USER' : 'postgres',
+        'PASSWORD' : 'badetkozaq1',
+        'HOST' : 'localhost',
+        #'PORT' : '5432'
     }
 }
 
