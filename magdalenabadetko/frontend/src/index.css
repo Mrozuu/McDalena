@@ -4,71 +4,70 @@
   }
 
   .loader {
+    display: block;
+    position: absolute;
+    z-index: 6;
+    background: url("./img/foodloosenapis.svg") no-repeat 100% 100%;
+    background-position: center center;
+    background-color: #FFEEE2;
+    left: calc(50vw - 175px);
+    top: 40%;
+    width: 350px;
+    height: 100px;
+    text-align: center;
+    color: white;
+  }
+
+  .loader__background {
     position: absolute;
     width: 100vw;
     height: 100vh;
-    background-color: white;
-    background-image: url('./img/logo1.svg');
-    background-position: center center;
-    z-index: 6;
+    background-color: #FFEEE2;
+    z-index: 5;
+    transition: all 1s ease-in-out;
   }
 
-  .loader-left {
-    position: absolute;
-    background-color: rgb(255, 255, 255);
-    width: 50vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    z-index: 5;
-  }
-
-  .loader-right {
-    position: absolute;
-    background-color: rgb(255, 255, 255);
-    width: 50vw;
-    height: 100vh;
-    top: 0;
-    right: 0;
-    z-index: 5;
+  .loaded__background {
+    opacity: 0;
+    transition: all 1s ease-in-out;
   }
 
   .loaded {
-    animation: slideOut 1s forwards;
-    -webkit-animation: slideOut 1s forwards;
+    top: 0;
     transition: all 1s ease-in-out;
   }
 
+  .loading__photo {
+    display: block;
+    position: absolute;
+    z-index: 6;
+    background: url('./img/migzer.svg') no-repeat;
+    background-position: center center;
+    background-size: 100%;
+    left: calc(50vw - 50px);
+    top: 55%;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    animation: loadingLoop 3s infinite;
+    -webkit-animation: loadingLoop 3s infinite;
+    transition: all 1s ease-out;
+  }
 
-  @keyframes slideOut {
-    0% {
-      transform: translateY(0vh);
+  .loaded__photo {
+    opacity: 0;
+  }
+
+  @keyframes loadingLoop {
+    33% {
+      background: url('./img/rondel.svg') no-repeat;
     }
 
-    40% {
-      transform: translateY(-5vh);
-    }
-
-    45% {
-      opacity: 1;
+    66% {
+      background: url('./img/talerzyk.svg') no-repeat;
     }
 
     100% {
-      transform: translateY(15vh);
-      opacity: 0;
+      background: url('./img/migzer.svg') no-repeat;
     }
-  }
-
-  .loaded-right {
-    transition: all 1s ease-in-out;
-    transform: translateX(50vw);
-    -webkit-transform: translateX(50vw);
-    -ms-transform: translateX(50vw);
-  }
-
-  .loaded-left {
-    transition: all 1s ease-in-out;
-    transform: translateX(-50vw);
-    -webkit-transform: translateX(-50vw);
-    -ms-transform: translateX(-50vw);
   }
