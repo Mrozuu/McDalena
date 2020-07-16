@@ -22,7 +22,6 @@ function MainPictures(props) {
       y: "-100vh",
     },
   };
-
   return (
     <motion.div
       initial="initial"
