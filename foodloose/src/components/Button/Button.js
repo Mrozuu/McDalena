@@ -1,25 +1,28 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
+import { darken } from 'polished';
 
 const Button = styled.button`
+  position: relative;
   padding: 0;
-  background-color: ${({ theme, activeColor }) => (activeColor ? theme[activeColor] : theme.notes)};
-  width: 220px;
-  height: 47px;
+  background-color: ${({ activeColor }) => darken(0.2, `${activeColor}`)};
+  cursor: pointer;
+  width: 200px;
+  height: 60px;
   border: none;
-  border-radius: 50px;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 16px;
   text-transform: uppercase;
+  transition: 0.2s all;
+  top: 0;
+  &:hover {
+    background-color: ${({ activeColor }) => darken(0.3, `${activeColor}`)};
+    top: 5px;
+  }
 
-  ${({ secondary }) =>
-    secondary &&
-    css`
-      background-color: hsl(0, 0%, 90%);
-      width: 105px;
-      height: 30px;
-      font-size: 10px;
-    `}
+  &:focus {
+    outline: none;
+  }
 `;
 
 export default Button;
