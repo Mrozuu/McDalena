@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
-import PageTransition from 'data/PageTransition';
+import { PageTransition } from 'data/PageTransition';
 
 function MotionTransition({ children, side }) {
   return (

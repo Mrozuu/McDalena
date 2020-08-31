@@ -1,4 +1,4 @@
-const Sets = [
+export const Sets = [
   {
     id: 1,
     title: 'Francuski pocałunek',
@@ -20,5 +20,3 @@ const Sets = [
     listOfRecipes: [4, 5, 6],
   },
 ];
-
-export default Sets;
