@@ -95,36 +95,40 @@ const BottomIcon = styled.img`
 function SetTemplate() {
   return (
     <StyledWrapper>
-      <PictureWrapper>
-        <Carousel images={[picture1]} />
-      </PictureWrapper>
-      <ContentWrapper>
-        <TitleWrapper>
-          <StyledHeading big>Set francuski</StyledHeading>
-          <Heading>czyli jestes we francji es</Heading>
-        </TitleWrapper>
-        <MainWrapper>
-          <RecipesWrapper>
-            <Heading>PRZEPISY</Heading>
-            <RecipeHeader title="jajko z boczkiem" type={appetizer} />
-            <RecipeHeader title="kotlet schabowy z ziemniakami" type={main} />
-            <RecipeHeader title="szarlotka z lodami" type={dessert} />
-          </RecipesWrapper>
-          <DescriptionWrapper>
-            <Heading>OPIS</Heading>
-            <Paragraph>
-              Czerwona ziemia, sucha żółta trawa, zapach spalonej słońcem sawanny nieporównywalny z
-              niczym innym i tęsknota po każdym wspomnieniu. Majestat zwierzęcego świata, potęga
-              przyrody, krąg życia… A do tego krajobrazy jak z bajki, zapierające dech plaże,
-              bogactwo smaków, przypraw, owoców. Ociekające sokiem dojrzałe mango, awokado które
-              samo ze sobą smakuje tutaj wybornie, plantacje przypraw, świeże owoce morza,
-              orzeźwiający aromat limonki... Spróbujcie poczuć smak i zapach kolorowej, pachnącej
-              Afryki.
-            </Paragraph>
-          </DescriptionWrapper>
-        </MainWrapper>
-        <BottomIcon src={mixerIcon} alt="mixer" />
-      </ContentWrapper>
+      <MotionTransition side="leftSide">
+        <PictureWrapper>
+          <Carousel images={[picture1]} />
+        </PictureWrapper>
+      </MotionTransition>
+      <MotionTransition side="rightSide">
+        <ContentWrapper>
+          <TitleWrapper>
+            <StyledHeading big>Set francuski</StyledHeading>
+            <Heading>czyli jestes we francji es</Heading>
+          </TitleWrapper>
+          <MainWrapper>
+            <RecipesWrapper>
+              <Heading>PRZEPISY</Heading>
+              <RecipeHeader title="jajko z boczkiem" type={appetizer} />
+              <RecipeHeader title="kotlet schabowy z ziemniakami" type={main} />
+              <RecipeHeader title="szarlotka z lodami" type={dessert} />
+            </RecipesWrapper>
+            <DescriptionWrapper>
+              <Heading>OPIS</Heading>
+              <Paragraph>
+                Czerwona ziemia, sucha żółta trawa, zapach spalonej słońcem sawanny nieporównywalny
+                z niczym innym i tęsknota po każdym wspomnieniu. Majestat zwierzęcego świata, potęga
+                przyrody, krąg życia… A do tego krajobrazy jak z bajki, zapierające dech plaże,
+                bogactwo smaków, przypraw, owoców. Ociekające sokiem dojrzałe mango, awokado które
+                samo ze sobą smakuje tutaj wybornie, plantacje przypraw, świeże owoce morza,
+                orzeźwiający aromat limonki... Spróbujcie poczuć smak i zapach kolorowej, pachnącej
+                Afryki.
+              </Paragraph>
+            </DescriptionWrapper>
+          </MainWrapper>
+          <BottomIcon src={mixerIcon} alt="mixer" />
+        </ContentWrapper>
+      </MotionTransition>
     </StyledWrapper>
   );
 }

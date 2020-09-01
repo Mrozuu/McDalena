@@ -6,6 +6,7 @@ import { PageTransition } from 'data/PageTransition';
 function MotionTransition({ children, side }) {
   return (
     <motion.div
+      key={side}
       initial="initial"
       animate="in"
       exit="out"
