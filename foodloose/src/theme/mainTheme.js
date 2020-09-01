@@ -10,9 +10,9 @@ export const theme = {
   fontSize: {
     xxs: '1rem',
     xs: '1.2rem',
-    s: '1.6rem',
+    s: '1.7rem',
     m: '2.1rem',
-    l: '2.2rem',
+    l: '2.5rem',
     xl: '3rem',
   },
 };

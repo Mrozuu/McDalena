@@ -6,7 +6,7 @@ import HeadTitle from 'components/HeadTitle/HeadTitle';
 import DotBar from 'components/DotBar/DotBar';
 import SetsView from './SetsView';
 
-function App() {
+function Root() {
   return (
     <MainTemplate>
       <HeadTitle />
@@ -17,4 +17,4 @@ function App() {
   );
 }
 
-export default App;
+export default Root;

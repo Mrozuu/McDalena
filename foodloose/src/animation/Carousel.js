@@ -27,7 +27,7 @@ const CarouselWrapper = styled.div`
 `;
 
 class Carousel extends Component {
-  constructor({ images, speed }) {
+  constructor({ images }) {
     super({ images });
     this.state = {
       length: images.length,
@@ -51,7 +51,6 @@ class Carousel extends Component {
   render() {
     const { length, imageIndex } = this.state;
     const { images } = this.props;
-    console.log(imageIndex);
     if (length === 1) {
       return (
         <CarouselWrapper>
