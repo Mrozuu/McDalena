@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.js": "/McDalena/static/js/main.f15efd55.chunk.js",
+    "main.js.map": "/McDalena/static/js/main.f15efd55.chunk.js.map",
+    "runtime-main.js": "/McDalena/static/js/runtime-main.217c4bdc.js",
+    "runtime-main.js.map": "/McDalena/static/js/runtime-main.217c4bdc.js.map",
+    "static/js/2.9d1bec10.chunk.js": "/McDalena/static/js/2.9d1bec10.chunk.js",
+    "static/js/2.9d1bec10.chunk.js.map": "/McDalena/static/js/2.9d1bec10.chunk.js.map",
+    "index.html": "/McDalena/index.html",
+    "precache-manifest.9a2ea66472d68815df98ea111732f41f.js": "/McDalena/precache-manifest.9a2ea66472d68815df98ea111732f41f.js",
+    "service-worker.js": "/McDalena/service-worker.js",
+    "static/js/2.9d1bec10.chunk.js.LICENSE.txt": "/McDalena/static/js/2.9d1bec10.chunk.js.LICENSE.txt",
+    "static/media/dessert.svg": "/McDalena/static/media/dessert.c4b611e6.svg",
+    "static/media/head.svg": "/McDalena/static/media/head.097199be.svg",
+    "static/media/mixer.svg": "/McDalena/static/media/mixer.6e8bcc82.svg",
+    "static/media/plate.svg": "/McDalena/static/media/plate.77bfef93.svg",
+    "static/media/pot.svg": "/McDalena/static/media/pot.42db8d5d.svg",
+    "static/media/set1.jpg": "/McDalena/static/media/set1.a2867013.jpg",
+    "static/media/sign.svg": "/McDalena/static/media/sign.30a3026c.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.217c4bdc.js",
+    "static/js/2.9d1bec10.chunk.js",
+    "static/js/main.f15efd55.chunk.js"
+  ]
+}
