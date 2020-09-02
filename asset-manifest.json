@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/McDalena/static/js/main.f15efd55.chunk.js",
-    "main.js.map": "/McDalena/static/js/main.f15efd55.chunk.js.map",
+    "main.js": "/McDalena/static/js/main.6049c6c2.chunk.js",
+    "main.js.map": "/McDalena/static/js/main.6049c6c2.chunk.js.map",
     "runtime-main.js": "/McDalena/static/js/runtime-main.217c4bdc.js",
     "runtime-main.js.map": "/McDalena/static/js/runtime-main.217c4bdc.js.map",
     "static/js/2.9d1bec10.chunk.js": "/McDalena/static/js/2.9d1bec10.chunk.js",
     "static/js/2.9d1bec10.chunk.js.map": "/McDalena/static/js/2.9d1bec10.chunk.js.map",
     "index.html": "/McDalena/index.html",
-    "precache-manifest.9a2ea66472d68815df98ea111732f41f.js": "/McDalena/precache-manifest.9a2ea66472d68815df98ea111732f41f.js",
+    "precache-manifest.89b314c5d3d2c8eb49790ab5b45f1aed.js": "/McDalena/precache-manifest.89b314c5d3d2c8eb49790ab5b45f1aed.js",
     "service-worker.js": "/McDalena/service-worker.js",
     "static/js/2.9d1bec10.chunk.js.LICENSE.txt": "/McDalena/static/js/2.9d1bec10.chunk.js.LICENSE.txt",
     "static/media/dessert.svg": "/McDalena/static/media/dessert.c4b611e6.svg",
@@ -21,6 +21,6 @@
   "entrypoints": [
     "static/js/runtime-main.217c4bdc.js",
     "static/js/2.9d1bec10.chunk.js",
-    "static/js/main.f15efd55.chunk.js"
+    "static/js/main.6049c6c2.chunk.js"
   ]
 }

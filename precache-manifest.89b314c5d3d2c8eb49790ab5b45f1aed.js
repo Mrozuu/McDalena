@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7082f3487ba7cd6681ef7f899c6277a7",
+    "revision": "405b91a506fcb969028f574d04ccf8b1",
     "url": "/McDalena/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/McDalena/static/js/2.9d1bec10.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b0320e1a949cba841cde",
-    "url": "/McDalena/static/js/main.f15efd55.chunk.js"
+    "revision": "077b70dd58c39fc54ba8",
+    "url": "/McDalena/static/js/main.6049c6c2.chunk.js"
   },
   {
     "revision": "296728aba85cd5c02ac2",
