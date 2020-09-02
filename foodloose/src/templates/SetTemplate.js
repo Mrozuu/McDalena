@@ -1,22 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
+import RecipeTemplate from 'templates/RecipeTemplate';
 import Heading from 'components/Heading/Heading';
 import Paragraph from 'components/Paragraph/Paragraph';
-import RecipeHeader from 'components/RecipeHeader/RecipeHeader';
+import Icon from 'components/Icon/Icon';
+import Underline from 'components/Underline/Underline';
 import mixerIcon from 'assets/icons/mixer.svg';
-import appetizer from 'assets/icons/plate.svg';
-import main from 'assets/icons/pot.svg';
-import dessert from 'assets/icons/dessert.svg';
 import picture1 from 'assets/pictures/set1.jpg';
 import Carousel from 'animation/Carousel';
 import MotionTransition from 'animation/MotionTransition';
+import headIcon from 'assets/icons/head.svg';
+import Przystawka from 'assets/icons/plate.svg';
+import DanieGlowne from 'assets/icons/pot.svg';
+import Deser from 'assets/icons/dessert.svg';
 
 const StyledWrapper = styled.div`
   height: 100vh;
   width: 100vw;
   overflow: hidden;
   position: relative;
-  min-width: 1200px;
 `;
 
 const PictureWrapper = styled.div`
@@ -31,68 +33,69 @@ const ContentWrapper = styled.div`
   position: absolute;
   top: 0%;
   right: 0;
-  height: 100vh;
   width: 50%;
+  height: 100vh;
   background-color: ${({ theme }) => theme.secondary};
+  text-align: center;
   display: grid;
-  grid-template-rows: 0.2fr 1fr 14vh;
+  grid-template-rows: 0.25fr 1fr 0.1fr;
 `;
 
-const TitleWrapper = styled.div`
+const HeadingWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: ${({ theme }) => theme.secondary};
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 5vh;
 `;
 
-const MainWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  div:first-child {
-    border-right: 1.5px solid ${({ theme }) => theme.grey100};
-  }
+const StyledHeading = styled(Heading)`
+  margin: 0 auto;
+  font-size: 3.2rem;
+`;
 
-  div:second-child {
-    border-left: 1.5px solid ${({ theme }) => theme.grey100};
+const StyledParagraph = styled(Paragraph)`
+  margin: 0;
+`;
+
+const FooterWrapper = styled.div`
+  height: 100%;
+  background-color: ${({ theme }) => theme.secondary};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const StyledIcon = styled(Icon)`
+  height: ${({ size }) => size}px;
+  width: ${({ size }) => size}px;
+  margin: 20px 0;
+`;
+
+const Recipe = styled.div`
+  h1 {
+    text-transform: lowercase;
   }
 `;
 
 const RecipesWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-`;
-
-const DescriptionWrapper = styled.div`
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  padding: 0 20px;
-
+  height: 100%;
+  padding: 0 8vw;
+  overflow-y: auto;
   p {
     text-align: left;
+    padding-bottom: 50px;
   }
 `;
 
-const StyledHeading = styled(Heading)`
-  margin: 0;
-  border-bottom: 2px solid ${({ theme }) => theme.grey200};
-`;
-
-const BottomIcon = styled.img`
-  display: block;
-  position: absolute;
-  opacity: 0.8;
-  bottom: 2vh;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 10vh;
-  width: auto;
-`;
-
-function SetTemplate() {
+function SetTemplate({
+  Sets: {
+    data: { sets },
+  },
+}) {
   return (
     <StyledWrapper>
       <MotionTransition side="leftSide">
@@ -102,31 +105,22 @@ function SetTemplate() {
       </MotionTransition>
       <MotionTransition side="rightSide">
         <ContentWrapper>
-          <TitleWrapper>
-            <StyledHeading big>Set francuski</StyledHeading>
-            <Heading>czyli jestes we francji es</Heading>
-          </TitleWrapper>
-          <MainWrapper>
-            <RecipesWrapper>
-              <Heading>PRZEPISY</Heading>
-              <RecipeHeader title="jajko z boczkiem" type={appetizer} />
-              <RecipeHeader title="kotlet schabowy z ziemniakami" type={main} />
-              <RecipeHeader title="szarlotka z lodami" type={dessert} />
-            </RecipesWrapper>
-            <DescriptionWrapper>
-              <Heading>OPIS</Heading>
-              <Paragraph>
-                Czerwona ziemia, sucha żółta trawa, zapach spalonej słońcem sawanny nieporównywalny
-                z niczym innym i tęsknota po każdym wspomnieniu. Majestat zwierzęcego świata, potęga
-                przyrody, krąg życia… A do tego krajobrazy jak z bajki, zapierające dech plaże,
-                bogactwo smaków, przypraw, owoców. Ociekające sokiem dojrzałe mango, awokado które
-                samo ze sobą smakuje tutaj wybornie, plantacje przypraw, świeże owoce morza,
-                orzeźwiający aromat limonki... Spróbujcie poczuć smak i zapach kolorowej, pachnącej
-                Afryki.
-              </Paragraph>
-            </DescriptionWrapper>
-          </MainWrapper>
-          <BottomIcon src={mixerIcon} alt="mixer" />
+          <HeadingWrapper big>
+            <StyledHeading big>{sets[0].title}</StyledHeading>
+            <StyledHeading>{sets[0].titleExtension}</StyledHeading>
+            <Underline width={200} size={50} />
+          </HeadingWrapper>
+          <RecipesWrapper>
+            <StyledHeading big>Opis</StyledHeading>
+            <StyledParagraph>{sets[0].description}</StyledParagraph>
+            <StyledHeading big>Przepisy</StyledHeading>
+            {sets[0].listOfRecipes.map(({ name, type, parts }) => (
+              <RecipeTemplate title={name} type={Przystawka} parts={parts} />
+            ))}
+          </RecipesWrapper>
+          <FooterWrapper>
+            <Underline width={200} size={50} />
+          </FooterWrapper>
         </ContentWrapper>
       </MotionTransition>
     </StyledWrapper>

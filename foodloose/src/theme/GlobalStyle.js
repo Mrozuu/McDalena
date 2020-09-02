@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap');
   
   *, *::before, *::after {
     box-sizing: border-box;
@@ -18,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0 !important;
     font-size: 1.6rem;
     overflow: hidden;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Sacramento', cursive;
   }
 `;
 

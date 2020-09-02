@@ -27,10 +27,10 @@ const CarouselWrapper = styled.div`
 `;
 
 class Carousel extends Component {
-  constructor({ images }) {
-    super({ images });
+  constructor(props) {
+    super(props);
     this.state = {
-      length: images.length,
+      length: props.images.length,
       imageIndex: 0,
     };
   }
@@ -82,7 +82,7 @@ class Carousel extends Component {
 }
 
 Carousel.propTypes = {
-  images: PropTypes.string.isRequired,
+  images: PropTypes.array.isRequired,
 };
 
 export default Carousel;
