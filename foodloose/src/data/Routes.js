@@ -1,6 +1,6 @@
-import PreviewTemplate from 'templates/PreviewTemplate';
+import SetTemplate from 'templates/SetTemplate';
 
 export const Routes = [
-  { id: 1, path: '/MainSet1', Component: PreviewTemplate, title: 'Set 1' },
-  { id: 2, path: '/MainSet2', Component: PreviewTemplate, title: 'Set 2' },
+  { id: 'KURWA1', path: '/F', Component: SetTemplate },
+  { id: 'KURWA2', path: '/P', Component: SetTemplate },
 ];

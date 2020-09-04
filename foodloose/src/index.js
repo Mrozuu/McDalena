@@ -4,10 +4,8 @@ import Root from 'views/Root';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Router>
-      <Root />
-    </Router>
-  </React.StrictMode>,
+  <Router>
+    <Root />
+  </Router>,
   document.getElementById('root'),
 );

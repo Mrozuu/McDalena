@@ -6,14 +6,15 @@ import { Sets } from 'data/Sets';
 
 function SetsView() {
   const location = useLocation();
+  console.log(Sets[0].data.sets[0].title[0]);
   return (
     <AnimatePresence>
-      <Switch location={location} key={location.key}>
-        <Route exact path="/MainSet1" key="mainset1">
-          <SetTemplate Sets={Sets[0]} />
+      <Switch location={location} key={location.pathname}>
+        <Route exact path="/F" key="mainset1">
+          <SetTemplate Sets={Sets[0]} uni="Set1" />
         </Route>
-        <Route exact path="/MainSet2" key="mainset2">
-          <SetTemplate title="set2" key="mainset2" />
+        <Route exact path="/P" key="mainset1">
+          <SetTemplate Sets={Sets[1]} uni="Set2" />
         </Route>
       </Switch>
     </AnimatePresence>

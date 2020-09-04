@@ -23,8 +23,8 @@ const DotButton = styled.button`
 
 const DotBar = () => (
   <BarWrapper>
-    <DotButton exact as={NavLink} to="/MainSet1" />
-    <DotButton exact as={NavLink} to="/MainSet2" />
+    <DotButton exact as={NavLink} to="/F" />
+    <DotButton exact as={NavLink} to="/P" />
   </BarWrapper>
 );
 

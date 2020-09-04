@@ -7,6 +7,8 @@ import Icon from 'components/Icon/Icon';
 import Underline from 'components/Underline/Underline';
 import mixerIcon from 'assets/icons/mixer.svg';
 import picture1 from 'assets/pictures/set1.jpg';
+import picture2 from 'assets/pictures/set2.jpg';
+import picture3 from 'assets/pictures/set3.jpg';
 import Carousel from 'animation/Carousel';
 import MotionTransition from 'animation/MotionTransition';
 import headIcon from 'assets/icons/head.svg';
@@ -35,7 +37,7 @@ const ContentWrapper = styled.div`
   right: 0;
   width: 50%;
   height: 100vh;
-  background-color: ${({ theme }) => theme.secondary};
+  background-color: ${({ backgroundColor }) => backgroundColor};
   text-align: center;
   display: grid;
   grid-template-rows: 0.25fr 1fr 0.1fr;
@@ -44,7 +46,7 @@ const ContentWrapper = styled.div`
 const HeadingWrapper = styled.div`
   width: 100%;
   height: 100%;
-  background-color: ${({ theme }) => theme.secondary};
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,7 +64,7 @@ const StyledParagraph = styled(Paragraph)`
 
 const FooterWrapper = styled.div`
   height: 100%;
-  background-color: ${({ theme }) => theme.secondary};
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -95,16 +97,18 @@ function SetTemplate({
   Sets: {
     data: { sets },
   },
+  uni,
 }) {
+  console.log(uni);
   return (
     <StyledWrapper>
-      <MotionTransition side="leftSide">
+      <MotionTransition side="leftSide" uni={uni}>
         <PictureWrapper>
-          <Carousel images={[picture1]} />
+          <Carousel images={[picture1, picture2, picture3]} />
         </PictureWrapper>
       </MotionTransition>
-      <MotionTransition side="rightSide">
-        <ContentWrapper>
+      <MotionTransition side="rightSide" uni={uni}>
+        <ContentWrapper backgroundColor={sets[0].color.css}>
           <HeadingWrapper big>
             <StyledHeading big>{sets[0].title}</StyledHeading>
             <StyledHeading>{sets[0].titleExtension}</StyledHeading>
@@ -117,6 +121,7 @@ function SetTemplate({
             {sets[0].listOfRecipes.map(({ name, type, parts }) => (
               <RecipeTemplate title={name} type={Przystawka} parts={parts} />
             ))}
+            <StyledHeading big>SMACZNEGO!</StyledHeading>
           </RecipesWrapper>
           <FooterWrapper>
             <Underline width={200} size={50} />

@@ -3,10 +3,11 @@ import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 import { PageTransition } from 'data/PageTransition';
 
-function MotionTransition({ children, side }) {
+function MotionTransition({ children, side, uni }) {
+  console.log(uni + side);
   return (
     <motion.div
-      key={side}
+      key={uni + side}
       initial="initial"
       animate="in"
       exit="out"
@@ -21,6 +22,7 @@ function MotionTransition({ children, side }) {
 MotionTransition.propTypes = {
   children: PropTypes.arrayOf(PropTypes.object).isRequired,
   side: PropTypes.oneOf(['leftSide', 'rightSide']).isRequired,
+  uni: PropTypes.string.isRequired,
 };
 
 export default MotionTransition;

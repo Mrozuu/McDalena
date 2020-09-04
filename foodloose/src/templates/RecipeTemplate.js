@@ -38,7 +38,7 @@ function RecipeTemplate({ title, type, parts }) {
             ))}
           </ul>
           <Paragraph>{preparation}</Paragraph>
-          <Underline width={75} size={25} second />
+          <Underline width={75} size={40} second />
         </>
       ))}
     </RecipeWrapper>

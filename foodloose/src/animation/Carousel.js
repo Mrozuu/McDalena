@@ -60,9 +60,9 @@ class Carousel extends Component {
     } else {
       return (
         <CarouselWrapper>
-          <AnimatePresence exitBeforeEnter initial={false}>
+          <AnimatePresence>
             <motion.img
-              key={images[imageIndex]}
+              key={`img-${images[imageIndex]}`}
               src={images[imageIndex]}
               variants={variants}
               initial="initial"
