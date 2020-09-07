@@ -19,10 +19,12 @@ import Deser from 'assets/icons/dessert.svg';
 const StyledWrapper = styled.div`
   height: 100vh;
   width: 100vw;
-  position: absolute;
+  overflow: hidden;
+  position: relative;
 `;
 
 const PictureWrapper = styled.div`
+  position: absolute;
   top: 0%;
   left: 0;
   height: 100vh;
@@ -100,10 +102,12 @@ function SetTemplate({
   console.log(uni);
   return (
     <StyledWrapper>
-      <div style={{ position: 'relative' }}>
+      <MotionTransition side="leftSide" uni={uni}>
         <PictureWrapper>
           <Carousel images={[picture1, picture2, picture3]} />
         </PictureWrapper>
+      </MotionTransition>
+      <MotionTransition side="rightSide" uni={uni}>
         <ContentWrapper backgroundColor={sets[0].color.css}>
           <HeadingWrapper big>
             <StyledHeading big>{sets[0].title}</StyledHeading>
@@ -123,7 +127,7 @@ function SetTemplate({
             <Underline width={200} size={50} />
           </FooterWrapper>
         </ContentWrapper>
-      </div>
+      </MotionTransition>
     </StyledWrapper>
   );
 }

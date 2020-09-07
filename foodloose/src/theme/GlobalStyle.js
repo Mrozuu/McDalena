@@ -14,9 +14,9 @@ const GlobalStyle = createGlobalStyle`
   
   body {
     padding: 0;
-    overflow: hidden;
     margin: 0 !important;
     font-size: 1.6rem;
+    overflow: hidden;
     font-family: 'Sacramento', cursive;
   }
 `;
