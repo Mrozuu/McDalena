@@ -20,7 +20,7 @@ const StyledWrapper = styled.div`
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  position: relative;
+  position: absolute;
 `;
 
 const PictureWrapper = styled.div`

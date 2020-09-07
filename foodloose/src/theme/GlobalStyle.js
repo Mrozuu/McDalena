@@ -16,7 +16,6 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0 !important;
     font-size: 1.6rem;
-    overflow: hidden;
     font-family: 'Sacramento', cursive;
   }
 `;
