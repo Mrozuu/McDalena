@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { darken } from 'polished';
 import styled from 'styled-components';
 import headIcon from 'assets/icons/head.svg';
 import mixerIcon from 'assets/icons/mixer.svg';
 
 const StyledSpan = styled.span`
-  width: ${({ width }) => width}px;
+  width: ${({ width }) => width}vw;
   height: 2px;
-  background-color: ${({ theme }) => theme.grey200};
+  background-color: ${({ color }) => darken(0.3, `${color}`)};
 `;
 
 const UnderlineWrapper = styled.div`
@@ -22,12 +23,12 @@ const StyledIcon = styled.img`
   margin: 0 10px;
 `;
 
-function Underline({ width, size, second }) {
+function Underline({ width, size, second, color }) {
   return (
     <UnderlineWrapper>
-      <StyledSpan width={width} />
+      <StyledSpan width={width} color={color} />
       <StyledIcon src={second ? mixerIcon : headIcon} size={size} />
-      <StyledSpan width={width} />
+      <StyledSpan width={width} color={color} />
     </UnderlineWrapper>
   );
 }
@@ -35,6 +36,7 @@ function Underline({ width, size, second }) {
 Underline.propTypes = {
   width: PropTypes.number.isRequired,
   size: PropTypes.number.isRequired,
+  color: PropTypes.string.isRequired,
   second: PropTypes.bool,
 };
 

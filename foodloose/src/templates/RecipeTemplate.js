@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import Heading from 'components/Heading/Heading';
 import Icon from 'components/Icon/Icon';
 import Paragraph from 'components/Paragraph/Paragraph';
-import Underline from 'components/Underline/Underline';
 import Przystawka from 'assets/icons/plate.svg';
 import DanieGlowne from 'assets/icons/pot.svg';
 import Deser from 'assets/icons/dessert.svg';
@@ -24,21 +23,24 @@ const RecipeWrapper = styled.div`
   }
 `;
 
+const StyledHeading = styled(Heading)`
+  margin: 20px 0;
+`;
+
 function RecipeTemplate({ title, type, parts }) {
   return (
     <RecipeWrapper>
-      <Heading big>{title}</Heading>
+      <StyledHeading big>{title}</StyledHeading>
       <Icon src={type} size={50} alt="icon" />
-      {parts.map(({ name, ingredients, preparation }) => (
+      {parts.map(({ name, ingredients, preparation }, i) => (
         <>
-          <Heading big>{name}</Heading>
+          <StyledHeading big>{name}</StyledHeading>
           <ul>
             {ingredients.map((item) => (
               <li>{item}</li>
             ))}
           </ul>
           <Paragraph>{preparation}</Paragraph>
-          <Underline width={75} size={40} second />
         </>
       ))}
     </RecipeWrapper>

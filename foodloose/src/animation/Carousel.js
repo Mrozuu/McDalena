@@ -18,11 +18,14 @@ const variants = {
 const CarouselWrapper = styled.div`
   height: 100%;
   width: 100%;
-
+  position: absolute;
   img {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 `;
 

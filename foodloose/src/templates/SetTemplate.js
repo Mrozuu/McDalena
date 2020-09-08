@@ -15,32 +15,46 @@ import headIcon from 'assets/icons/head.svg';
 import Przystawka from 'assets/icons/plate.svg';
 import DanieGlowne from 'assets/icons/pot.svg';
 import Deser from 'assets/icons/dessert.svg';
+import { darken } from 'polished';
 
 const StyledWrapper = styled.div`
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
   position: absolute;
 `;
 
 const PictureWrapper = styled.div`
-  position: absolute;
-  top: 0%;
-  left: 0;
-  height: 100vh;
-  width: 50%;
+  @media (min-width: 1280px) {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    height: 100vh;
+    width: 50%;
+  }
+
+  @media (max-width: 1280) {
+    display: none;
+  }
 `;
 
 const ContentWrapper = styled.div`
   position: absolute;
+  overflow-x: hidden;
   top: 0%;
   right: 0;
-  width: 50%;
   height: 100vh;
   background-color: ${({ backgroundColor }) => backgroundColor};
   text-align: center;
   display: grid;
   grid-template-rows: 0.25fr 1fr 0.1fr;
+  @media (min-width: 1280px) {
+    width: 50%;
+  }
+
+  @media (max-width: 1281px) {
+    overflow-y: auto;
+    width: 100%;
+  }
 `;
 
 const HeadingWrapper = styled.div`
@@ -51,11 +65,15 @@ const HeadingWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media (max-width: 1280px) {
+    padding-top: 120px;
+    width: 100vw;
+  }
 `;
 
 const StyledHeading = styled(Heading)`
-  margin: 0 auto;
-  font-size: 3.2rem;
+  margin: 20px auto 20px auto;
+  font-size: 3.8rem;
 `;
 
 const StyledParagraph = styled(Paragraph)`
@@ -71,25 +89,32 @@ const FooterWrapper = styled.div`
   justify-content: center;
 `;
 
-const StyledIcon = styled(Icon)`
-  height: ${({ size }) => size}px;
-  width: ${({ size }) => size}px;
-  margin: 20px 0;
-`;
-
-const Recipe = styled.div`
-  h1 {
-    text-transform: lowercase;
-  }
-`;
-
 const RecipesWrapper = styled.div`
   height: 100%;
   padding: 0 8vw;
-  overflow-y: auto;
   p {
     text-align: left;
-    padding-bottom: 50px;
+    font-family: 'Amatic SC', cursive;
+    font-weight: 700;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${({ backgroundColor }) => darken(0.3, `${backgroundColor}`)};
+    border-radius: 2px;
+  }
+  @media (min-width: 1280px) {
+    overflow-y: auto;
+  }
+  @media (max-width: 1280px) {
+    width: 100vw;
   }
 `;
 
@@ -99,7 +124,7 @@ function SetTemplate({
   },
   uni,
 }) {
-  console.log(uni);
+  const length = sets[0].listOfRecipes.length;
   return (
     <StyledWrapper>
       <MotionTransition side="leftSide" uni={uni}>
@@ -110,21 +135,26 @@ function SetTemplate({
       <MotionTransition side="rightSide" uni={uni}>
         <ContentWrapper backgroundColor={sets[0].color.css}>
           <HeadingWrapper big>
-            <StyledHeading big>{sets[0].title}</StyledHeading>
-            <StyledHeading>{sets[0].titleExtension}</StyledHeading>
-            <Underline width={200} size={50} />
+            <Heading big>{sets[0].title}</Heading>
+            <Heading>{sets[0].titleExtension}</Heading>
+            <Underline color={sets[0].color.css} width={10} size={50} />
           </HeadingWrapper>
-          <RecipesWrapper>
+          <RecipesWrapper backgroundColor={sets[0].color.css}>
             <StyledHeading big>Opis</StyledHeading>
             <StyledParagraph>{sets[0].description}</StyledParagraph>
             <StyledHeading big>Przepisy</StyledHeading>
-            {sets[0].listOfRecipes.map(({ name, type, parts }) => (
-              <RecipeTemplate title={name} type={Przystawka} parts={parts} />
+            {sets[0].listOfRecipes.map(({ name, type, parts }, i) => (
+              <>
+                <RecipeTemplate title={name} type={Przystawka} parts={parts} />
+                {length !== i + 1 && (
+                  <Underline color={sets[0].color.css} width={75} size={40} second />
+                )}
+              </>
             ))}
             <StyledHeading big>SMACZNEGO!</StyledHeading>
           </RecipesWrapper>
           <FooterWrapper>
-            <Underline width={200} size={50} />
+            <Underline color={sets[0].color.css} width={10} size={50} />
           </FooterWrapper>
         </ContentWrapper>
       </MotionTransition>
