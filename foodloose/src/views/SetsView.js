@@ -10,16 +10,16 @@ function SetsView() {
   return (
     <AnimatePresence>
       <Switch location={location} key={location.pathname}>
-        {Sets.map((item) => (
+        {Sets.map((item, id) => (
           <Route
             exact
             path={`/${item.data.sets[0].title.replace(/\s/g, '')}`}
             key={item.data.sets[0].title}
           >
-            <SetTemplate Sets={Sets[0]} uni={item.data.sets[0].title} />
+            <SetTemplate Sets={Sets[id]} uni={item.data.sets[0].title} />
           </Route>
         ))}
-        {Sets.map((item) => (
+        {Sets.map((item, id) => (
           <Route
             exact
             path={`/${item.data.sets[0].title.replace(/\s/g, '')}Preview`}

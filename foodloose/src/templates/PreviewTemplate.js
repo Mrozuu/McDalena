@@ -37,7 +37,7 @@ const TitleWrapper = styled.div`
   height: 100vh;
   padding: 0;
   margin: 0;
-  background-color: hsl(0, 23%, 66%);
+  background-color: ${({ activeColor }) => activeColor};
   background-image: url(${background});
   background-position: 90% 90%;
   background-repeat: no-repeat;
@@ -76,7 +76,7 @@ function PreviewTemplate({ title, activeColor }) {
         </PictureWrapper>
       </MotionTransition>
       <MotionTransition side="rightSide">
-        <TitleWrapper>
+        <TitleWrapper activeColor={activeColor.css}>
           <StyledHeading big>{title}</StyledHeading>
           <Button as={Link} to={`${title.replace(/\s/g, '')}`} activeColor={activeColor.css}>
             Pokaz wiecej

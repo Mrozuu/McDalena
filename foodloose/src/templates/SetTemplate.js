@@ -133,8 +133,12 @@ const StyledButton = styled(Button)`
   @media (min-width: 1280px) {
     top: 50px;
   }
-  @media (max-width: 1280px) {
-    top: 100px;
+  @media (min-width: 620px) and (max-width: 1280px) {
+    top: 150px;
+  }
+  @media (max-width: 620px) {
+    top: 120px;
+    position: fixed;
   }
 `;
 
