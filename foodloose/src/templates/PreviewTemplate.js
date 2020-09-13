@@ -1,25 +1,33 @@
 import React from 'react';
 import styled from 'styled-components';
 import picture1 from 'assets/pictures/set1.jpg';
-import background from 'assets/icons/head.svg';
+import background from 'assets/icons/head2.svg';
 import Heading from 'components/Heading/Heading';
 import Button from 'components/Button/Button';
 import Carousel from 'animation/Carousel';
 import MotionTransition from 'animation/MotionTransition';
+import { Link } from 'react-router-dom';
 
 const StyledWrapper = styled.div`
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  position: relative;
+  position: absolute;
+  z-index: 0;
 `;
 
 const PictureWrapper = styled.div`
-  position: absolute;
-  top: 0%;
-  left: 0;
-  height: 100vh;
-  width: 50%;
+  @media (min-width: 1000px) {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    height: 100vh;
+    width: 50%;
+  }
+
+  @media (max-width: 1000px) {
+    display: none;
+  }
 `;
 
 const TitleWrapper = styled.div`
@@ -27,7 +35,6 @@ const TitleWrapper = styled.div`
   top: 0;
   right: 0;
   height: 100vh;
-  width: 50%;
   padding: 0;
   margin: 0;
   background-color: hsl(0, 23%, 66%);
@@ -40,13 +47,27 @@ const TitleWrapper = styled.div`
   align-items: center;
   justify-content: center;
 
+  @media (min-width: 1000px) {
+    width: 50%;
+  }
+
+  @media (max-width: 1000px) {
+    overflow-y: auto;
+    width: 100%;
+  }
+
   h1,
   button {
     display: block;
+    padding: 30px 0;
   }
 `;
 
-function PreviewTemplate({ title }) {
+const StyledHeading = styled(Heading)`
+  font-size: 35px;
+`;
+
+function PreviewTemplate({ title, activeColor }) {
   return (
     <StyledWrapper>
       <MotionTransition side="leftSide">
@@ -56,8 +77,10 @@ function PreviewTemplate({ title }) {
       </MotionTransition>
       <MotionTransition side="rightSide">
         <TitleWrapper>
-          <Heading big>{title}</Heading>
-          <Button activeColor="hsl(0, 23%, 66%)">Pokaz wiecej</Button>
+          <StyledHeading big>{title}</StyledHeading>
+          <Button as={Link} to={`${title.replace(/\s/g, '')}`} activeColor={activeColor.css}>
+            Pokaz wiecej
+          </Button>
         </TitleWrapper>
       </MotionTransition>
     </StyledWrapper>

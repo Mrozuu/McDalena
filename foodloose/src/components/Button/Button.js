@@ -3,26 +3,28 @@ import { darken } from 'polished';
 
 const Button = styled.button`
   position: relative;
-  padding: 0;
+  padding: 20px 30px;
   background-color: ${({ activeColor }) => darken(0.2, `${activeColor}`)};
   cursor: pointer;
-  width: 200px;
-  height: 60px;
+  color: ${({ theme }) => theme.black};
   border: none;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
+  font-family: 'Amatic SC', cursive;
+  font-weight: 700;
+  font-size: 20px;
+  border-radius: 3px;
   text-transform: uppercase;
   transition: 0.2s all;
   top: 0;
   &:hover {
     background-color: ${({ activeColor }) => darken(0.3, `${activeColor}`)};
-    top: 5px;
+    transform: translateY(5px);
   }
 
   &:focus {
     outline: none;
   }
+
+  text-decoration: none;
 `;
 
 export default Button;

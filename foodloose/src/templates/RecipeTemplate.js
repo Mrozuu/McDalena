@@ -4,9 +4,6 @@ import styled from 'styled-components';
 import Heading from 'components/Heading/Heading';
 import Icon from 'components/Icon/Icon';
 import Paragraph from 'components/Paragraph/Paragraph';
-import Przystawka from 'assets/icons/plate.svg';
-import DanieGlowne from 'assets/icons/pot.svg';
-import Deser from 'assets/icons/dessert.svg';
 
 const RecipeWrapper = styled.div`
   display: flex;
@@ -37,7 +34,7 @@ function RecipeTemplate({ title, type, parts }) {
           <StyledHeading big>{name}</StyledHeading>
           <ul>
             {ingredients.map((item) => (
-              <li>{item}</li>
+              <li key={item}>{item}</li>
             ))}
           </ul>
           <Paragraph>{preparation}</Paragraph>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { request } from 'graphql-request';
 import LoadingView from 'views/LoadingView';
 import GlobalStyle from 'theme/GlobalStyle';
 import MainTemplate from 'templates/MainTemplate';

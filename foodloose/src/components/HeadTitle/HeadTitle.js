@@ -13,6 +13,7 @@ const HeadTitle = styled.div`
   background-repeat: no-repeat;
   background-size: 100% 100%;
   z-index: 9999;
+  border-radius: 3px;
 
   @media (max-width: 1280px) {
     width: 100%;
