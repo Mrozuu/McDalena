@@ -1,4 +1,4 @@
 # McDalena
 
 Chwilowy link:
-https://kalllllor.github.io/FrancuskipocałunekPreview
+https://kalllllor.github.io/FoodLoose
