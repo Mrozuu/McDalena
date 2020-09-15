@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/McDalena/precache-manifest.89b314c5d3d2c8eb49790ab5b45f1aed.js"
+  "/McDalena/precache-manifest.a5e63fbaf5a03f3e31c1743ce0704840.js"
 );
 
 self.addEventListener('message', (event) => {
