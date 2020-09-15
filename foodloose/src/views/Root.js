@@ -11,7 +11,7 @@ class Root extends Component {
   constructor() {
     super();
     this.state = {
-      isLoading: false,
+      isLoading: true,
     };
   }
 
