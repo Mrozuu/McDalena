@@ -4,11 +4,11 @@ module.exports = {
     browser: true,
     es6: true,
   },
-  extends: ["airbnb", "prettier", "prettier/react"],
-  parser: "babel-eslint",
+  extends: ['airbnb', 'prettier', 'prettier/react'],
+  parser: 'babel-eslint',
   globals: {
-    Atomics: "readonly",
-    SharedArrayBuffer: "readonly",
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
     document: true,
   },
   parserOptions: {
@@ -16,20 +16,23 @@ module.exports = {
       jsx: true,
     },
     ecmaVersion: 2018,
-    sourceType: "module",
+    sourceType: 'module',
   },
-  plugins: ["react"],
+  plugins: ['react'],
   rules: {
-    "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
-    "react/state-in-constructor": 0,
-    "react/prefer-default-export": 0,
-    "import/prefer-default-export": 0,
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'react/state-in-constructor': 0,
+    'react/prefer-default-export': 0,
+    'import/prefer-default-export': 0,
+    'no-else-return': 0,
+    'react/forbid-prop-types': 0,
+    'react/prop-types': 0,
   },
   settings: {
-    "import/resolver": {
+    'import/resolver': {
       node: {
-        extensions: [".js", ".jsx", ".ts", ".tsx"],
-        moduleDirectory: ["node_modules", "src/"],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        moduleDirectory: ['node_modules', 'src/'],
       },
     },
   },
